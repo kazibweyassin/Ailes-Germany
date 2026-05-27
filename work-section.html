@@ -14,6 +14,12 @@
 .expectation-list li { padding: 0.5rem 0; color: #4a4a4a; font-size: 0.95rem; }
 .expectation-list li:before { content: "✓ "; color: #CC0000; font-weight: 700; margin-right: 0.5rem; }
 .career-tag { display: inline-block; background: #CC0000; color: #fff; padding: 0.35rem 0.75rem; border-radius: 2px; font-size: 0.7rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: 0.05em; }
+.job-status { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.72rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:#2f8f46; margin-bottom:0.6rem; }
+.job-status::before { content:''; width:8px; height:8px; border-radius:50%; background:#2f8f46; box-shadow:0 0 0 4px rgba(47,143,70,0.12); }
+.job-actions { display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem; }
+.job-actions .btn { padding:0.75rem 1rem; font-size:0.8rem; }
+.job-meta { margin-top:0.65rem; }
+.job-meta p { margin-bottom:0.35rem; }
 .section-cta { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Manrope', system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; padding: 0.85rem 1.75rem; border-radius: 2px; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
 .btn-red { background: #CC0000; color: #fff; }
@@ -81,38 +87,66 @@
     </div>
 
     <div class="reveal reveal-delay-2" style="margin-top:3rem;">
-      <p class="section-label">Featured opportunities</p>
-      <h3 class="section-title" style="font-size:1.8rem;margin-bottom:0.75rem">Current roles hiring from Africa</h3>
+      <p class="section-label">Currently hiring</p>
+      <h3 class="section-title" style="font-size:1.8rem;margin-bottom:0.75rem">Open roles accepting applications now</h3>
     </div>
 
     <div class="card-grid reveal reveal-delay-2">
       <div class="info-card">
+        <div class="job-status">Currently Hiring</div>
         <div class="career-tag">Healthcare</div>
         <h3>Registered Nurse</h3>
-        <p><strong>Location:</strong> Berlin, Hamburg, Munich</p>
-        <p><strong>Salary:</strong> €24k–€32k/year</p>
-        <p><strong>Requirements:</strong> Nursing qualification, B1 German, EU recognition process.</p>
+        <div class="job-meta">
+          <p><strong>Location:</strong> Berlin, Hamburg, Munich</p>
+          <p><strong>Salary:</strong> €24k–€32k/year</p>
+          <p><strong>Requirements:</strong> Nursing qualification, B1 German, EU recognition process.</p>
+        </div>
+        <div class="job-actions">
+          <a href="mailto:info@ailesglobal.com?subject=Application%20-%20Registered%20Nurse&body=Hello%20Ailes%20Global,%0A%0AI%20want%20to%20apply%20for%20the%20Registered%20Nurse%20role.%0A%0AName:%0APhone/Email:%0ACurrent%20Country:%0AQualifications:%0AExperience:%0ALanguage%20Level:%0A%0AAttached%20CV:%20yes/no" class="btn btn-red">Apply with CV</a>
+          <a href="mailto:info@ailesglobal.com?subject=Visa%20Info%20-%20Registered%20Nurse&body=Hello%20Ailes%20Global,%0A%0AI%20need%20visa%20guidance%20for%20the%20Registered%20Nurse%20role.%0A%0AName:%0APhone/Email:%0ACurrent%20Country:%0ACV%20attached:%20yes/no" class="btn btn-outline">Visa info</a>
+        </div>
       </div>
       <div class="info-card">
+        <div class="job-status">Currently Hiring</div>
         <div class="career-tag">IT</div>
         <h3>Full-stack Developer</h3>
-        <p><strong>Location:</strong> Berlin, Cologne, Frankfurt</p>
-        <p><strong>Salary:</strong> €35k–€50k/year</p>
-        <p><strong>Requirements:</strong> 2+ years experience, Git/JavaScript/Python, English fluent.</p>
+        <div class="job-meta">
+          <p><strong>Location:</strong> Berlin, Cologne, Frankfurt</p>
+          <p><strong>Salary:</strong> €35k–€50k/year</p>
+          <p><strong>Requirements:</strong> 2+ years experience, Git/JavaScript/Python, English fluent.</p>
+        </div>
+        <div class="job-actions">
+          <a href="mailto:info@ailesglobal.com?subject=Application%20-%20Full-stack%20Developer&body=Hello%20Ailes%20Global,%0A%0AI%20want%20to%20apply%20for%20the%20Full-stack%20Developer%20role.%0A%0AName:%0APhone/Email:%0ACurrent%20Country:%0AStack:%0AExperience:%0AWebsite/Portfolio:%0A%0AAttached%20CV:%20yes/no" class="btn btn-red">Apply with CV</a>
+          <a href="mailto:info@ailesglobal.com?subject=Visa%20Info%20-%20Full-stack%20Developer&body=Hello%20Ailes%20Global,%0A%0AI%20need%20visa%20guidance%20for%20the%20Full-stack%20Developer%20role.%0A%0AName:%0APhone/Email:%0ACurrent%20Country:%0APortfolio:%20yes/no" class="btn btn-outline">Visa info</a>
+        </div>
       </div>
       <div class="info-card">
+        <div class="job-status">Currently Hiring</div>
         <div class="career-tag">Caregiving</div>
         <h3>Senior Care Assistant</h3>
-        <p><strong>Location:</strong> Stuttgart, Munich, Dusseldorf</p>
-        <p><strong>Salary:</strong> €22k–€28k/year</p>
-        <p><strong>Requirements:</strong> Care experience, basic German (A2+), valid health check.</p>
+        <div class="job-meta">
+          <p><strong>Location:</strong> Stuttgart, Munich, Dusseldorf</p>
+          <p><strong>Salary:</strong> €22k–€28k/year</p>
+          <p><strong>Requirements:</strong> Care experience, basic German (A2+), valid health check.</p>
+        </div>
+        <div class="job-actions">
+          <a href="mailto:info@ailesglobal.com?subject=Application%20-%20Senior%20Care%20Assistant&body=Hello%20Ailes%20Global,%0A%0AI%20want%20to%20apply%20for%20the%20Senior%20Care%20Assistant%20role.%0A%0AName:%0APhone/Email:%0ACurrent%20Country:%0ACare%20Experience:%0AGerman%20Level:%0A%0AAttached%20CV:%20yes/no" class="btn btn-red">Apply with CV</a>
+          <a href="mailto:info@ailesglobal.com?subject=Visa%20Info%20-%20Senior%20Care%20Assistant&body=Hello%20Ailes%20Global,%0A%0AI%20need%20visa%20guidance%20for%20the%20Senior%20Care%20Assistant%20role.%0A%0AName:%0APhone/Email:%0ACurrent%20Country:%0ACV%20attached:%20yes/no" class="btn btn-outline">Visa info</a>
+        </div>
       </div>
       <div class="info-card">
+        <div class="job-status">Currently Hiring</div>
         <div class="career-tag">Logistics</div>
         <h3>Warehouse Supervisor</h3>
-        <p><strong>Location:</strong> Frankfurt, Leipzig, Cologne</p>
-        <p><strong>Salary:</strong> €26k–€35k/year</p>
-        <p><strong>Requirements:</strong> Logistics background, leadership experience, A2 German.</p>
+        <div class="job-meta">
+          <p><strong>Location:</strong> Frankfurt, Leipzig, Cologne</p>
+          <p><strong>Salary:</strong> €26k–€35k/year</p>
+          <p><strong>Requirements:</strong> Logistics background, leadership experience, A2 German.</p>
+        </div>
+        <div class="job-actions">
+          <a href="mailto:info@ailesglobal.com?subject=Application%20-%20Warehouse%20Supervisor&body=Hello%20Ailes%20Global,%0A%0AI%20want%20to%20apply%20for%20the%20Warehouse%20Supervisor%20role.%0A%0AName:%0APhone/Email:%0ACurrent%20Country:%0ALogistics%20Experience:%0ALanguage%20Level:%0A%0AAttached%20CV:%20yes/no" class="btn btn-red">Apply with CV</a>
+          <a href="mailto:info@ailesglobal.com?subject=Visa%20Info%20-%20Warehouse%20Supervisor&body=Hello%20Ailes%20Global,%0A%0AI%20need%20visa%20guidance%20for%20the%20Warehouse%20Supervisor%20role.%0A%0AName:%0APhone/Email:%0ACurrent%20Country:%0ACV%20attached:%20yes/no" class="btn btn-outline">Visa info</a>
+        </div>
       </div>
     </div>
 
@@ -120,8 +154,8 @@
       <a href="#" class="btn btn-red" target="_blank" rel="noopener" data-whatsapp-message="I want to explore work visa options for Germany">
         Check Your Work Visa Eligibility
       </a>
-      <a href="#" class="btn btn-outline" target="_blank" rel="noopener" data-whatsapp-message="I want to see more job opportunities in Germany">
-        See More Opportunities
+      <a href="mailto:info@ailesglobal.com?subject=Job%20Application%20-%20Germany&body=Hello%20Ailes%20Global,%0A%0AI%20want%20to%20apply%20for%20a%20current%20Germany%20role.%0A%0APlease%20find%20my%20CV%20attached%20and%20reach%20me%20with%20the%20next%20steps.%0A%0AName:%0APhone/Email:%0ACurrent%20Country:%0A%0ACV%20attached:%20yes/no" class="btn btn-outline">
+        Apply by Email
       </a>
     </div>
   </div>

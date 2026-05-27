@@ -1485,14 +1485,8 @@ footer {
             console.warn('Fragment '+src+' is empty');
             return;
           }
-          var temp = document.createElement('div');
-          temp.innerHTML = html;
-          var fragment = temp.firstElementChild;
-          if(fragment){
-            ph.parentNode.replaceChild(fragment, ph);
-          } else {
-            console.error('Fragment '+src+' parse error');
-          }
+          ph.insertAdjacentHTML('beforebegin', html);
+          ph.remove();
         })
         .catch(function(err){
           console.error('Failed to load '+src+':', err);
