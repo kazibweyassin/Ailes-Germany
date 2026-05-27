@@ -1,6 +1,36 @@
 <!-- ════════════════════════════════
      WORK IN GERMANY (fragment)
 ════════════════════════════════ -->
+<style>
+/* Fragment-specific styles */
+.section { padding: 6rem 0; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+.card-grid.two-up { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 768px) { .card-grid.two-up { grid-template-columns: 1fr; } }
+.info-card { border: 1px solid #d6d2c8; padding: 2rem; background: #fff; border-radius: 4px; }
+.info-card h3 { font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600; }
+.info-card p { font-size: 0.95rem; line-height: 1.6; color: #4a4a4a; margin-bottom: 0.75rem; }
+.expectation-list { list-style: none; padding: 0; }
+.expectation-list li { padding: 0.5rem 0; color: #4a4a4a; font-size: 0.95rem; }
+.expectation-list li:before { content: "✓ "; color: #CC0000; font-weight: 700; margin-right: 0.5rem; }
+.career-tag { display: inline-block; background: #CC0000; color: #fff; padding: 0.35rem 0.75rem; border-radius: 2px; font-size: 0.7rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: 0.05em; }
+.section-cta { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Manrope', system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; padding: 0.85rem 1.75rem; border-radius: 2px; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+.btn-red { background: #CC0000; color: #fff; }
+.btn-red:hover { background: #a30000; transform: translateY(-1px); }
+.btn-outline { background: transparent; color: #0a0a0a; border: 1.5px solid #d6d2c8; }
+.btn-outline:hover { border-color: #0a0a0a; transform: translateY(-1px); }
+.section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #CC0000; margin-bottom: 0.75rem; }
+.section-title { font-family: 'Playfair Display', Georgia, serif; font-size: 2.2rem; font-weight: 900; line-height: 1.1; color: #0a0a0a; margin-bottom: 1rem; }
+.section-title em { font-style: italic; color: #CC0000; font-weight: 400; }
+.section-sub { font-size: 1rem; color: #4a4a4a; line-height: 1.75; max-width: 520px; }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 5vw; }
+</style>
 <section class="section" id="work">
   <div class="container">
     <div class="reveal">
