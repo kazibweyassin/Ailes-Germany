@@ -1175,101 +1175,26 @@ footer {
 <!-- ════════════════════════════════
      WORK IN GERMANY
 ════════════════════════════════ -->
-<section class="section" id="work">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label">Work pathway</p>
-      <h2 class="section-title">Move to Germany for <em>skilled work</em></h2>
-      <p class="section-sub">
-        Germany actively recruits from Africa. New migration laws make it easier than ever for qualified professionals to secure work visas.
-      </p>
-    </div>
+<!-- placeholder: Work section loaded from fragment to keep index.html lean -->
+<div id="work-placeholder" data-src="work-section.html" aria-busy="true"></div>
 
-    <div class="card-grid two-up reveal reveal-delay-1">
-      <div class="info-card">
-        <h3>How the work visa works</h3>
-        <ul class="expectation-list">
-          <li>Secure a job offer from a German employer</li>
-          <li>Employer begins sponsorship process</li>
-          <li>You apply for work visa with skill recognition documents</li>
-          <li>Visa typically issued within 4–8 weeks</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>What you need</h3>
-        <ul class="expectation-list">
-          <li>Relevant qualifications or certifications</li>
-          <li>1–3 years professional experience (typical)</li>
-          <li>Language skills (B1 German or job-specific English)</li>
-          <li>Valid passport and health insurance</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>Salary expectations</h3>
-        <ul class="expectation-list">
-          <li>Entry-level roles: €20k–€28k/year</li>
-          <li>Mid-level (3–5 yrs): €28k–€45k/year</li>
-          <li>Senior roles: €45k–€70k+/year</li>
-          <li>Healthcare & IT typically pay above average</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>Timeline</h3>
-        <ul class="expectation-list">
-          <li>Job search: 2–6 months</li>
-          <li>Visa sponsorship: 1–2 months</li>
-          <li>Visa processing: 4–8 weeks</li>
-          <li>Total: 4–9 months (typical)</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="reveal reveal-delay-2" style="margin-top:3rem;">
-      <p class="section-label">Featured opportunities</p>
-      <h3 class="section-title" style="font-size:1.8rem;margin-bottom:0.75rem">Current roles hiring from Africa</h3>
-    </div>
-
-    <div class="card-grid reveal reveal-delay-2">
-      <div class="info-card">
-        <div class="career-tag">Healthcare</div>
-        <h3>Registered Nurse</h3>
-        <p><strong>Location:</strong> Berlin, Hamburg, Munich</p>
-        <p><strong>Salary:</strong> €24k–€32k/year</p>
-        <p><strong>Requirements:</strong> Nursing qualification, B1 German, EU recognition process.</p>
-      </div>
-      <div class="info-card">
-        <div class="career-tag">IT</div>
-        <h3>Full-stack Developer</h3>
-        <p><strong>Location:</strong> Berlin, Cologne, Frankfurt</p>
-        <p><strong>Salary:</strong> €35k–€50k/year</p>
-        <p><strong>Requirements:</strong> 2+ years experience, Git/JavaScript/Python, English fluent.</p>
-      </div>
-      <div class="info-card">
-        <div class="career-tag">Caregiving</div>
-        <h3>Senior Care Assistant</h3>
-        <p><strong>Location:</strong> Stuttgart, Munich, Dusseldorf</p>
-        <p><strong>Salary:</strong> €22k–€28k/year</p>
-        <p><strong>Requirements:</strong> Care experience, basic German (A2+), valid health check.</p>
-      </div>
-      <div class="info-card">
-        <div class="career-tag">Logistics</div>
-        <h3>Warehouse Supervisor</h3>
-        <p><strong>Location:</strong> Frankfurt, Leipzig, Cologne</p>
-        <p><strong>Salary:</strong> €26k–€35k/year</p>
-        <p><strong>Requirements:</strong> Logistics background, leadership experience, A2 German.</p>
-      </div>
-    </div>
-
-    <div class="section-cta reveal reveal-delay-3">
-      <a href="#" class="btn btn-red" target="_blank" rel="noopener" data-whatsapp-message="I want to explore work visa options for Germany">
-        Check Your Work Visa Eligibility
-      </a>
-      <a href="#" class="btn btn-outline" target="_blank" rel="noopener" data-whatsapp-message="I want to see more job opportunities in Germany">
-        See More Opportunities
-      </a>
-    </div>
-  </div>
-</section>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var ph = document.getElementById('work-placeholder');
+  if(!ph) return;
+  fetch(ph.getAttribute('data-src'))
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var temp = document.createElement('div');
+      temp.innerHTML = html;
+      ph.parentNode.replaceChild(temp.firstElementChild, ph);
+    })
+    .catch(function(err){
+      console.error('Failed to load work section fragment:', err);
+      ph.setAttribute('aria-busy','false');
+    });
+});
+</script>
 
 <!-- ════════════════════════════════
      IN-DEMAND CAREERS
