@@ -141,6 +141,67 @@ nav {
 /* ════════════════════════════════
   HERO
 ════════════════════════════════ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 8rem 5vw;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--red);
+  font-weight: 400;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+.eyebrow-flag {
+  display: flex;
+  gap: 2px;
+}
+.eyebrow-flag span {
+  width: 12px;
+  height: 2px;
+  display: block;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -430,12 +491,39 @@ nav {
 }
 .lead-modal { display:none; }
 .lead-backdrop { position: fixed; inset:0; background: rgba(0,0,0,0.45); }
-.lead-panel { position: fixed; left:50%; top:50%; transform:translate(-50%,-50%); max-width:520px; width:92%; background:var(--white); padding:1.25rem; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.16); }
+.lead-panel { position: fixed; left:50%; top:50%; transform:translate(-50%,-50%); max-width:640px; width:92%; background:var(--white); padding:1.4rem; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,0.22); max-height:88vh; overflow:auto; }
 .lead-panel h3 { font-family:var(--serif); margin-bottom:0.25rem; }
 .lead-panel p { color:var(--gray); margin-bottom:0.75rem; font-size:0.95rem; }
-.lead-panel input[type="text"], .lead-panel input[type="email"] { width:100%; padding:0.6rem; border:1px solid var(--border); border-radius:4px; }
-.lead-panel label { display:block; margin-bottom:0.6rem; }
-.lead-panel .lead-actions { display:flex; gap:0.6rem; justify-content:flex-end; margin-top:0.75rem; }
+.lead-stepper { display:flex; gap:0.5rem; margin:0.75rem 0 1rem; }
+.lead-stepper span { flex:1; height:6px; border-radius:999px; background:var(--gray-lt); }
+.lead-stepper span.active { background:var(--red); }
+.lead-step { display:none; }
+.lead-step.active { display:block; }
+.lead-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.85rem; }
+.lead-grid.three-up { grid-template-columns:repeat(3,1fr); }
+.lead-field { display:block; margin-bottom:0.85rem; }
+.lead-field span { display:block; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray); margin-bottom:0.35rem; }
+.lead-field input,
+.lead-field select,
+.lead-field textarea { width:100%; padding:0.72rem 0.8rem; border:1px solid var(--border); border-radius:6px; font:inherit; background:#fff; }
+.lead-field textarea { min-height:110px; resize:vertical; }
+.lead-note { font-size:0.85rem; color:var(--gray); line-height:1.6; }
+.lead-result { border:1px solid var(--border); border-left:4px solid var(--red); background:#fff; padding:1rem; border-radius:8px; margin:1rem 0; }
+.lead-result.good { border-left-color:#2f8f46; }
+.lead-result.warning { border-left-color:#b57b00; }
+.lead-result.bad { border-left-color:#a30000; }
+.lead-result h4 { margin-bottom:0.35rem; font-size:1.15rem; }
+.lead-result ul { margin:0.75rem 0 0 1.2rem; color:var(--gray); line-height:1.65; }
+.lead-result-actions { display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1rem; }
+.lead-panel .lead-actions { display:flex; gap:0.6rem; justify-content:space-between; margin-top:1rem; flex-wrap:wrap; }
+.lead-panel .lead-actions .left-actions,
+.lead-panel .lead-actions .right-actions { display:flex; gap:0.6rem; flex-wrap:wrap; }
+
+@media (max-width: 720px) {
+  .lead-grid,
+  .lead-grid.three-up { grid-template-columns:1fr; }
+  .lead-panel { width:94%; padding:1rem; }
+}
 
 @media (max-width: 960px) {
   .card-grid,
@@ -1119,29 +1207,6 @@ footer {
 
 <!-- Work in Germany loaded from fragment -->
 <div id="work-placeholder" data-src="work-section.html"></div>
-<script>
-(function(){
-  function loadFragment(id, src){
-    var ph = document.getElementById(id);
-    if(!ph) return;
-    fetch(src)
-      .then(function(r){ return r.text(); })
-      .then(function(html){
-        var temp = document.createElement('div');
-        temp.innerHTML = html;
-        ph.parentNode.replaceChild(temp.firstElementChild, ph);
-      })
-      .catch(function(err){
-        console.error('Failed to load '+src+':', err);
-      });
-  }
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){ loadFragment('work-placeholder', 'work-section.html'); });
-  } else {
-    loadFragment('work-placeholder', 'work-section.html');
-  }
-})();
-</script>
 
 <!-- ════════════════════════════════
      IN-DEMAND CAREERS
@@ -1398,28 +1463,48 @@ footer {
   </div>
 </section>
 
-<!-- Cost Breakdown loaded from fragment -->
+<!-- Cost Breakdown & Work Section loaded from fragments -->
 <div id="cost-placeholder" data-src="cost-breakdown.html"></div>
+
+<!-- Unified fragment loader -->
 <script>
 (function(){
-  function loadFragment(id, src){
-    var ph = document.getElementById(id);
-    if(!ph) return;
-    fetch(src)
-      .then(function(r){ return r.text(); })
-      .then(function(html){
-        var temp = document.createElement('div');
-        temp.innerHTML = html;
-        ph.parentNode.replaceChild(temp.firstElementChild, ph);
-      })
-      .catch(function(err){
-        console.error('Failed to load '+src+':', err);
-      });
+  function loadAllFragments(){
+    var placeholders = document.querySelectorAll('[data-src]');
+    placeholders.forEach(function(ph){
+      var src = ph.getAttribute('data-src');
+      if(!src) return;
+      
+      fetch(src)
+        .then(function(r){
+          if(!r.ok) throw new Error('HTTP '+r.status);
+          return r.text();
+        })
+        .then(function(html){
+          if(!html || html.trim().length === 0){
+            console.warn('Fragment '+src+' is empty');
+            return;
+          }
+          var temp = document.createElement('div');
+          temp.innerHTML = html;
+          var fragment = temp.firstElementChild;
+          if(fragment){
+            ph.parentNode.replaceChild(fragment, ph);
+          } else {
+            console.error('Fragment '+src+' parse error');
+          }
+        })
+        .catch(function(err){
+          console.error('Failed to load '+src+':', err);
+          ph.remove();
+        });
+    });
   }
+  
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){ loadFragment('cost-placeholder', 'cost-breakdown.html'); });
+    document.addEventListener('DOMContentLoaded', loadAllFragments);
   } else {
-    loadFragment('cost-placeholder', 'cost-breakdown.html');
+    loadAllFragments();
   }
 })();
 </script>
@@ -1852,13 +1937,14 @@ footer {
      JS
 ════════════════════════════════ -->
 <script>
-const WHATSAPP_NUMBER = '256704833021';
+const WHATSAPP_NUMBER = '+256704833021';
 
 function buildWhatsAppLink(message) {
-  return `https://wa.me/${encodeURIComponent(WHATSAPP_NUMBER)}?text=${encodeURIComponent(message)}`;
+  const normalizedNumber = WHATSAPP_NUMBER.replace(/\D/g, '');
+  return `https://wa.me/${encodeURIComponent(normalizedNumber)}?text=${encodeURIComponent(message)}`;
 }
 
-// Lead modal + click interception
+// Lead wizard + click interception
 const leadModal = (function(){
   const root = document.getElementById('lead-modal-root');
   root.innerHTML = `
@@ -1866,16 +1952,108 @@ const leadModal = (function(){
       <div class="lead-backdrop"></div>
       <div class="lead-panel" role="dialog" aria-modal="true" aria-labelledby="lead-title">
         <button class="lead-close" aria-label="Close" style="position:absolute;right:12px;top:10px;border:none;background:none;font-size:20px;cursor:pointer">✕</button>
-        <h3 id="lead-title">Quick — tell us who you are</h3>
-        <p>We save your request and open WhatsApp. Provide name and phone or email (optional).</p>
+        <h3 id="lead-title">Check your Germany eligibility</h3>
+        <p id="lead-intro">Answer 3 short steps. We'll show the best route, then let you continue with a simple application.</p>
+        <div class="lead-stepper" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         <form id="lead-form">
-          <label><input name="name" type="text" placeholder="Your name" /></label>
-          <label><input name="contact" type="text" placeholder="Phone or email" /></label>
           <input type="hidden" name="message" />
           <input type="hidden" name="source" />
+          <input type="hidden" name="route" />
+          <input type="hidden" name="eligibility" />
+
+          <section class="lead-step active" data-step="1">
+            <div class="lead-note">Start with your background. This helps us match the right Germany pathway.</div>
+            <div class="lead-grid">
+              <label class="lead-field">
+                <span>Your goal</span>
+                <select name="goal" required>
+                  <option value="" selected disabled>Select a route</option>
+                  <option value="study">Study</option>
+                  <option value="ausbildung">Ausbildung</option>
+                  <option value="work">Skilled Work</option>
+                  <option value="not-sure">Not sure yet</option>
+                </select>
+              </label>
+              <label class="lead-field">
+                <span>Highest education</span>
+                <select name="education" required>
+                  <option value="" selected disabled>Select education</option>
+                  <option value="secondary">Secondary school</option>
+                  <option value="diploma">Diploma / certificate</option>
+                  <option value="degree">Bachelor's degree</option>
+                  <option value="master">Master's degree</option>
+                </select>
+              </label>
+              <label class="lead-field">
+                <span>Work experience</span>
+                <select name="experience" required>
+                  <option value="" selected disabled>Select experience</option>
+                  <option value="0">0 years</option>
+                  <option value="1-2">1–2 years</option>
+                  <option value="3-5">3–5 years</option>
+                  <option value="5+">5+ years</option>
+                </select>
+              </label>
+              <label class="lead-field">
+                <span>Language level</span>
+                <select name="language" required>
+                  <option value="" selected disabled>Select level</option>
+                  <option value="none">No German yet</option>
+                  <option value="a1">A1</option>
+                  <option value="a2">A2</option>
+                  <option value="b1">B1</option>
+                  <option value="b2">B2+</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <section class="lead-step" data-step="2">
+            <div id="lead-result" class="lead-result"></div>
+            <p id="lead-result-note" class="lead-note"></p>
+          </section>
+
+          <section class="lead-step" data-step="3">
+            <div class="lead-note">If the route fits, send your application details in one quick step.</div>
+            <div class="lead-grid">
+              <label class="lead-field">
+                <span>Your name</span>
+                <input name="name" type="text" placeholder="Full name" />
+              </label>
+              <label class="lead-field">
+                <span>Phone or email</span>
+                <input name="contact" type="text" placeholder="Phone or email" />
+              </label>
+              <label class="lead-field">
+                <span>Country / city</span>
+                <input name="location" type="text" placeholder="Kampala, Uganda" />
+              </label>
+              <label class="lead-field">
+                <span>Best route</span>
+                <input name="bestRoute" type="text" readonly />
+              </label>
+            </div>
+            <label class="lead-field">
+              <span>Anything else we should know?</span>
+              <textarea name="notes" placeholder="Share your timeline, documents, or questions"></textarea>
+            </label>
+          </section>
+
+          <section class="lead-step" data-step="4">
+            <div id="lead-success" class="lead-result good"></div>
+            <p id="lead-success-note" class="lead-note"></p>
+          </section>
+
           <div class="lead-actions">
-            <button type="submit" class="btn btn-red">Send & Open WhatsApp</button>
-            <button type="button" id="lead-skip" class="btn btn-outline">Skip & Open WhatsApp</button>
+            <div class="left-actions">
+              <button type="button" id="lead-back" class="btn btn-outline">Close</button>
+            </div>
+            <div class="right-actions">
+              <button type="button" id="lead-next" class="btn btn-red">Check Eligibility</button>
+              <button type="button" id="lead-continue" class="btn btn-red" style="display:none">Continue to Application</button>
+              <button type="submit" id="lead-submit" class="btn btn-red" style="display:none">Submit Application</button>
+              <button type="button" id="lead-open-wa" class="btn btn-outline" style="display:none">Open WhatsApp</button>
+            </div>
           </div>
         </form>
       </div>
@@ -1883,44 +2061,272 @@ const leadModal = (function(){
 
   const modal = document.getElementById('lead-modal');
   const form = document.getElementById('lead-form');
+  const title = document.getElementById('lead-title');
+  const intro = document.getElementById('lead-intro');
   const closeBtn = modal.querySelector('.lead-close');
   const backdrop = modal.querySelector('.lead-backdrop');
-  const skipBtn = document.getElementById('lead-skip');
+  const stepEls = Array.from(modal.querySelectorAll('.lead-step'));
+  const stepDots = Array.from(modal.querySelectorAll('.lead-stepper span'));
+  const backBtn = document.getElementById('lead-back');
+  const nextBtn = document.getElementById('lead-next');
+  const continueBtn = document.getElementById('lead-continue');
+  const submitBtn = document.getElementById('lead-submit');
+  const openWaBtn = document.getElementById('lead-open-wa');
+  const resultBox = document.getElementById('lead-result');
+  const resultNote = document.getElementById('lead-result-note');
+  const successBox = document.getElementById('lead-success');
+  const successNote = document.getElementById('lead-success-note');
+
+  let currentStep = 1;
   let waUrl = '';
+  let baseMessage = '';
+  let sourceValue = '';
+  let routeState = null;
+
+  function setStep(step){
+    currentStep = step;
+    stepEls.forEach(el => el.classList.toggle('active', Number(el.dataset.step) === step));
+    stepDots.forEach((dot, index) => dot.classList.toggle('active', index < step));
+
+    backBtn.textContent = step === 1 ? 'Close' : 'Back';
+    nextBtn.style.display = step === 1 ? 'inline-flex' : 'none';
+    continueBtn.style.display = step === 2 ? 'inline-flex' : 'none';
+    submitBtn.style.display = step === 3 ? 'inline-flex' : 'none';
+    openWaBtn.style.display = step === 4 ? 'inline-flex' : 'none';
+  }
+
+  function close(){
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  function resetWizard(){
+    form.reset();
+    routeState = null;
+    baseMessage = '';
+    sourceValue = '';
+    waUrl = '';
+    form.message.value = '';
+    form.source.value = '';
+    form.route.value = '';
+    form.eligibility.value = '';
+    title.textContent = 'Check your Germany eligibility';
+    intro.textContent = 'Answer 3 short steps. We\'ll show the best route, then let you continue with a simple application.';
+    resultBox.innerHTML = '';
+    resultNote.textContent = '';
+    successBox.innerHTML = '';
+    successNote.textContent = '';
+    setStep(1);
+  }
 
   function open(message, href, source){
     waUrl = href;
+    baseMessage = message;
+    sourceValue = source || '';
+    resetWizard();
     form.message.value = message;
-    form.source.value = source || '';
-    form.name.value = '';
-    form.contact.value = '';
+    form.source.value = sourceValue;
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
   }
-  function close(){ modal.style.display = 'none'; modal.setAttribute('aria-hidden', 'true'); }
+
+  function getFormData(){
+    return {
+      goal: form.goal.value,
+      education: form.education.value,
+      experience: form.experience.value,
+      language: form.language.value,
+      name: form.name.value.trim(),
+      contact: form.contact.value.trim(),
+      location: form.location.value.trim(),
+      notes: form.notes.value.trim(),
+    };
+  }
+
+  function labelFor(value, map){ return map[value] || value || '—'; }
+
+  function evaluateEligibility(data){
+    const educationRank = { secondary: 1, diploma: 2, degree: 3, master: 4 }[data.education] || 0;
+    const experienceRank = { '0': 0, '1-2': 1, '3-5': 3, '5+': 4 }[data.experience] || 0;
+    const languageRank = { none: 0, a1: 1, a2: 2, b1: 3, b2: 4 }[data.language] || 0;
+
+    const routes = [
+      {
+        key: 'study',
+        label: 'Study in Germany',
+        score: (educationRank >= 1 ? 2 : 0) + (languageRank >= 1 ? 1 : 0) + (data.goal === 'study' ? 1 : 0),
+        eligible: educationRank >= 1 && languageRank >= 1,
+        goodFor: ['secondary', 'diploma', 'degree'],
+        nextSteps: ['Prepare transcripts and documents', 'Check language or admission requirements', 'Get a realistic budget plan'],
+      },
+      {
+        key: 'ausbildung',
+        label: 'Ausbildung',
+        score: (educationRank >= 1 ? 2 : 0) + (experienceRank <= 3 ? 1 : 0) + (languageRank >= 2 ? 1 : 0) + (data.goal === 'ausbildung' ? 1 : 0),
+        eligible: educationRank >= 1 && experienceRank <= 3 && languageRank >= 2,
+        goodFor: ['secondary', 'diploma', 'degree'],
+        nextSteps: ['Start German lessons toward B1', 'Shortlist a practical vocational field', 'Prepare a skills CV'],
+      },
+      {
+        key: 'work',
+        label: 'Skilled Work',
+        score: (educationRank >= 2 ? 2 : 0) + (experienceRank >= 3 ? 1 : 0) + (languageRank >= 2 ? 1 : 0) + (data.goal === 'work' ? 1 : 0),
+        eligible: educationRank >= 2 && experienceRank >= 3 && languageRank >= 2,
+        goodFor: ['diploma', 'degree', 'master'],
+        nextSteps: ['Check qualification recognition', 'Get a stronger CV and references', 'Improve German to B1 or better'],
+      },
+    ];
+
+    routes.sort((a, b) => b.score - a.score);
+    const best = routes[0];
+    const matchedGoal = routes.find(route => route.key === data.goal && route.eligible);
+    const selected = matchedGoal || best;
+    const qualified = selected.eligible;
+    const level = qualified ? 'ready' : selected.score >= 3 ? 'close' : 'not-ready';
+
+    return {
+      route: selected,
+      level,
+      allRoutes: routes,
+      educationRank,
+      experienceRank,
+      languageRank,
+    };
+  }
+
+  function renderResult(result, data){
+    const levelClass = result.level === 'ready' ? 'good' : result.level === 'close' ? 'warning' : 'bad';
+    const heading = result.level === 'ready'
+      ? `You qualify for ${result.route.label}`
+      : result.level === 'close'
+        ? `${result.route.label} looks possible, but you need a bit more preparation`
+        : `${result.route.label} is not ready yet`;
+
+    resultBox.className = `lead-result ${levelClass}`;
+    resultBox.innerHTML = `
+      <h4>${heading}</h4>
+      <p>${result.level === 'ready' ? 'You look like a good fit right now.' : 'You can still get there with the right roadmap.'}</p>
+      <ul>
+        <li><strong>Goal:</strong> ${labelFor(data.goal, { study: 'Study', ausbildung: 'Ausbildung', work: 'Skilled Work', 'not-sure': 'Not sure yet' })}</li>
+        <li><strong>Education:</strong> ${labelFor(data.education, { secondary: 'Secondary school', diploma: 'Diploma / certificate', degree: "Bachelor's degree", master: "Master's degree" })}</li>
+        <li><strong>Experience:</strong> ${labelFor(data.experience, { '0': '0 years', '1-2': '1–2 years', '3-5': '3–5 years', '5+': '5+ years' })}</li>
+        <li><strong>Language:</strong> ${labelFor(data.language, { none: 'No German yet', a1: 'A1', a2: 'A2', b1: 'B1', b2: 'B2+' })}</li>
+      </ul>
+    `;
+
+    resultNote.textContent = result.level === 'ready'
+      ? `Next: send the application details and we'll prepare the next steps for ${result.route.label}.`
+      : `Next: send the application details and we'll give you a simple roadmap for ${result.route.label}.`;
+
+    form.route.value = result.route.label;
+    form.eligibility.value = result.level;
+    form.bestRoute.value = result.route.label;
+    continueBtn.textContent = result.level === 'ready' ? 'Continue to Application' : 'Request Roadmap';
+    submitBtn.textContent = result.level === 'ready' ? 'Submit Application' : 'Send Request';
+  }
+
+  function buildSummary(data, result){
+    return [
+      `Eligibility result: ${result.level === 'ready' ? 'Qualified' : result.level === 'close' ? 'Close, needs preparation' : 'Not ready yet'}`,
+      `Recommended route: ${result.route.label}`,
+      `Goal: ${labelFor(data.goal, { study: 'Study', ausbildung: 'Ausbildung', work: 'Skilled Work', 'not-sure': 'Not sure yet' })}`,
+      `Education: ${labelFor(data.education, { secondary: 'Secondary school', diploma: 'Diploma / certificate', degree: "Bachelor's degree", master: "Master's degree" })}`,
+      `Experience: ${labelFor(data.experience, { '0': '0 years', '1-2': '1–2 years', '3-5': '3–5 years', '5+': '5+ years' })}`,
+      `Language: ${labelFor(data.language, { none: 'No German yet', a1: 'A1', a2: 'A2', b1: 'B1', b2: 'B2+' })}`,
+      `Location: ${data.location || '-'}`,
+      `Notes: ${data.notes || '-'}`,
+    ].join('\n');
+  }
 
   closeBtn.addEventListener('click', close);
   backdrop.addEventListener('click', close);
 
-  skipBtn.addEventListener('click', () => { close(); window.open(waUrl, '_blank'); });
+  backBtn.addEventListener('click', () => {
+    if (currentStep === 1) {
+      close();
+      return;
+    }
+    setStep(currentStep - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    const data = getFormData();
+    if (!form.goal.checkValidity() || !form.education.checkValidity() || !form.experience.checkValidity() || !form.language.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    routeState = evaluateEligibility(data);
+    renderResult(routeState, data);
+    setStep(2);
+  });
+
+  continueBtn.addEventListener('click', () => {
+    if (!routeState) return;
+    const data = getFormData();
+    form.name.value = form.name.value || '';
+    form.contact.value = form.contact.value || '';
+    form.location.value = form.location.value || '';
+    if (!form.bestRoute.value) form.bestRoute.value = routeState.route.label;
+    if (routeState.level === 'ready') {
+      title.textContent = `Application for ${routeState.route.label}`;
+      intro.textContent = 'Add your contact details so we can review your case and reply with the next steps.';
+    } else {
+      title.textContent = `Roadmap request for ${routeState.route.label}`;
+      intro.textContent = 'Add your contact details and we will send you a practical plan to become eligible.';
+    }
+    setStep(3);
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = {
-      name: form.name.value.trim(),
-      contact: form.contact.value.trim(),
-      message: form.message.value,
-      source: form.source.value,
+    const data = getFormData();
+    if (!data.name || !data.contact) {
+      alert('Please add your name and contact details to continue.');
+      return;
+    }
+    if (!routeState) {
+      alert('Please check eligibility first.');
+      setStep(1);
+      return;
+    }
+
+    const summary = buildSummary(data, routeState);
+    const payload = {
+      name: data.name,
+      contact: data.contact,
+      message: `${summary}\n\nOriginal request: ${baseMessage}`,
+      source: `${sourceValue || 'website-cta'} | eligibility-wizard`,
       page: location.pathname,
     };
+
     try {
-      await fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
     } catch (err) {
       console.error('lead submit error', err);
-    } finally {
-      close();
-      window.open(waUrl, '_blank');
     }
+
+    title.textContent = 'Application received';
+    intro.textContent = 'Thanks — your details have been saved. You can now continue to WhatsApp with your eligibility summary.';
+    successBox.className = 'lead-result good';
+    successBox.innerHTML = `
+      <h4>Saved successfully</h4>
+      <p>We saved your details and matched you to ${routeState.route.label}.</p>
+      <ul>
+        <li>${routeState.level === 'ready' ? 'You look ready to move to the next step.' : 'You may need a short preparation plan first.'}</li>
+        <li>We will review your submission and respond shortly.</li>
+      </ul>
+    `;
+    successNote.textContent = 'If you want quicker communication, use WhatsApp with your summary.';
+    waUrl = buildWhatsAppLink(`${baseMessage}\n\n${summary}`);
+    setStep(4);
+  });
+
+  openWaBtn.addEventListener('click', () => {
+    if (waUrl) window.open(waUrl, '_blank');
   });
 
   return { open };
