@@ -141,64 +141,27 @@ nav {
 /* ════════════════════════════════
    HERO
 ════════════════════════════════ */
-.hero {
-  min-height: calc(100svh - 69px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 4rem;
-  padding: 5rem 5vw;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 1.75rem;
-}
-.eyebrow-flag {
-  display: flex;
-  height: 14px;
-  width: 24px;
-  border-radius: 1px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.eyebrow-flag span { flex: 1; }
-.eyebrow-text {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gray);
-}
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(2.6rem, 5vw, 4rem);
-  font-weight: 900;
-  line-height: 1.06;
-  letter-spacing: -0.03em;
-  color: var(--black);
-  margin-bottom: 1.5rem;
-}
-.hero h1 em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--red);
-}
-.hero-sub {
-  font-size: 1.05rem;
-  color: var(--gray);
-  line-height: 1.75;
-  max-width: 460px;
-  margin-bottom: 2.25rem;
-}
-.hero-actions {
-  display: flex;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-  margin-bottom: 2.5rem;
+<!-- placeholder: Cost breakdown loaded from fragment to keep index.html lean -->
+<div id="cost-placeholder" data-src="cost-breakdown.html" aria-busy="true"></div>
+
+<script>
+// Loader for cost-breakdown fragment
+document.addEventListener('DOMContentLoaded', function(){
+  var ph = document.getElementById('cost-placeholder');
+  if(!ph) return;
+  fetch(ph.getAttribute('data-src'))
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var temp = document.createElement('div');
+      temp.innerHTML = html;
+      ph.parentNode.replaceChild(temp.firstElementChild, ph);
+    })
+    .catch(function(err){
+      console.error('Failed to load cost fragment:', err);
+      ph.setAttribute('aria-busy','false');
+    });
+});
+</script>
 }
 .btn {
   display: inline-flex;
