@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Ailes Global helps Africans understand realistic pathways to Germany through Study, Ausbildung, and Skilled Work guidance."/>
+<meta name="theme-color" content="#0a0a0a"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Ailes Global — Germany Pathways for Africans"/>
+<meta property="og:description" content="Structured Germany guidance, practical resources, and honest eligibility checks for Africans exploring study, Ausbildung, and work routes."/>
+<meta name="twitter:card" content="summary"/>
 <title>Ailes Global — Move to Germany</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -343,6 +349,176 @@ nav {
   max-width: 520px;
 }
 .section-sub.light { color: rgba(248,246,241,0.7); }
+
+.section-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.card-grid.two-up {
+  grid-template-columns: repeat(2, 1fr);
+}
+.info-card {
+  border: 1px solid var(--border);
+  padding: 2rem;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--black) 0%, var(--red) 50%, var(--gold) 100%);
+}
+.info-card h3,
+.consultation-copy h3 {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+.info-card p,
+.consultation-copy p,
+.section-note {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.75;
+}
+.info-card ul,
+.expectation-list,
+.consultation-list {
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.info-card li,
+.expectation-list li,
+.consultation-list li {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+.info-card li::before,
+.expectation-list li::before,
+.consultation-list li::before {
+  content: '•';
+  color: var(--red);
+  font-weight: 700;
+  line-height: 1.2;
+  flex-shrink: 0;
+  margin-top: -1px;
+}
+.resource-tag,
+.career-tag,
+.consultation-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.9rem;
+}
+.pathway-actions,
+.section-cta,
+.consultation-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+.section-cta {
+  justify-content: center;
+}
+.pathway-cta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+  text-decoration: none;
+}
+.pathway-cta:hover { color: var(--red-dark); }
+.pathway-secondary {
+  color: var(--gray);
+}
+.pathway-secondary:hover { color: var(--black); }
+
+.highlight-panel {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  padding: 2rem;
+}
+
+.mobile-whatsapp {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 350;
+  display: none;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 14px 40px rgba(204,0,0,0.28);
+}
+
+/* Lead modal (lightweight) */
+.lead-modal { }
+.lead-backdrop { position: fixed; inset:0; background: rgba(0,0,0,0.45); }
+.lead-panel { position: fixed; left:50%; top:50%; transform:translate(-50%,-50%); max-width:520px; width:92%; background:var(--white); padding:1.25rem; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.16); }
+.lead-panel h3 { font-family:var(--serif); margin-bottom:0.25rem; }
+.lead-panel p { color:var(--gray); margin-bottom:0.75rem; font-size:0.95rem; }
+.lead-panel input[type="text"], .lead-panel input[type="email"] { width:100%; padding:0.6rem; border:1px solid var(--border); border-radius:4px; }
+.lead-panel label { display:block; margin-bottom:0.6rem; }
+.lead-panel .lead-actions { display:flex; gap:0.6rem; justify-content:flex-end; margin-top:0.75rem; }
+
+@media (max-width: 960px) {
+  .card-grid,
+  .card-grid.two-up {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .card-grid,
+  .card-grid.two-up {
+    grid-template-columns: 1fr;
+  }
+  .section-cta,
+  .consultation-actions,
+  .pathway-actions {
+    justify-content: flex-start;
+  }
+  .mobile-whatsapp {
+    display: inline-flex;
+  }
+}
 
 /* ════════════════════════════════
    PATHWAYS
@@ -819,8 +995,7 @@ footer {
       <li><a href="#process">How it works</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="https://wa.me/256700000000?text=Hello%2C%20I%20want%20to%20learn%20about%20moving%20to%20Germany" 
-       class="nav-cta" target="_blank" rel="noopener">WhatsApp Us</a>
+    <a href="#" class="nav-cta" target="_blank" rel="noopener" data-whatsapp-message="I want to learn about Germany pathways for Africans">WhatsApp Us</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -829,9 +1004,11 @@ footer {
     <a href="#pathways">Pathways</a>
     <a href="#process">How it works</a>
     <a href="#faq">FAQ</a>
-    <a href="https://wa.me/256700000000?text=Hello%2C%20I%20want%20to%20learn%20about%20moving%20to%20Germany" target="_blank" rel="noopener" style="color:var(--red);font-weight:700">WhatsApp Us →</a>
+    <a href="#" target="_blank" rel="noopener" style="color:var(--red);font-weight:700" data-whatsapp-message="I want to learn about Germany pathways for Africans">WhatsApp Us →</a>
   </div>
 </nav>
+
+<main>
 
 <!-- ════════════════════════════════
      HERO
@@ -860,8 +1037,7 @@ footer {
     </p>
 
     <div class="hero-actions reveal reveal-delay-3">
-      <a href="https://wa.me/256700000000?text=Hello%2C%20I%20want%20to%20check%20my%20eligibility%20for%20Germany" 
-         class="btn btn-red" target="_blank" rel="noopener">
+      <a href="#" class="btn btn-red" target="_blank" rel="noopener" data-whatsapp-message="I want to check my Germany eligibility">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
         Check My Eligibility
       </a>
@@ -875,32 +1051,32 @@ footer {
       <div class="proof-dots" aria-hidden="true">
         <span>AK</span><span>FO</span><span>BM</span><span>JN</span><span>+</span>
       </div>
-      <span>Guiding 1,200+ Africans toward Germany</span>
+      <span>Structured Germany guidance for Africans</span>
     </div>
   </div>
 
   <!-- Right: stat cards -->
   <div class="hero-right reveal reveal-delay-2">
     <div class="stat-card c-red">
-      <div class="stat-num">98%</div>
-      <div class="stat-label">Visa approval rate</div>
+      <div class="stat-num">Structured</div>
+      <div class="stat-label">Clear Germany pathways for Africans</div>
     </div>
     <div class="stat-cards-row">
       <div class="stat-card c-gold">
-        <div class="stat-num">1,200<span style="font-size:1.2rem">+</span></div>
-        <div class="stat-label">Africans guided</div>
+        <div class="stat-num">Honest</div>
+        <div class="stat-label">Realistic options before you spend money</div>
       </div>
       <div class="stat-card c-black">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Clear pathways</div>
+        <div class="stat-num">Guided</div>
+        <div class="stat-label">WhatsApp support and roadmap planning</div>
       </div>
     </div>
     <div class="stat-card" style="border-left:3px solid var(--gold);padding:1.5rem">
       <p style="font-size:0.875rem;color:var(--gray);line-height:1.7;font-style:italic">
-        "We had no idea where to start. Ailes Global gave us a clear plan and we got our visas in 5 months."
+        "We had no idea where to start. Ailes Global gave us a clear plan and helped us understand what was realistic for our profile."
       </p>
       <div style="margin-top:0.75rem;font-size:0.75rem;font-weight:700;color:var(--black);letter-spacing:0.04em">
-        — Amara M., Nigeria → Hamburg
+        — Client story shared for illustration
       </div>
     </div>
   </div>
@@ -937,10 +1113,10 @@ footer {
           We help you find the right programme, prepare your application, and
           get your student visa.
         </p>
-        <a href="#" class="pathway-link">
-          Learn more
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="pathway-actions">
+          <a href="#resources" class="pathway-cta">See the free guide</a>
+          <a href="#" class="pathway-cta pathway-secondary" data-whatsapp-message="I want to learn about Study in Germany">Ask on WhatsApp</a>
+        </div>
       </div>
 
       <div class="pathway-card">
@@ -958,10 +1134,10 @@ footer {
           workers in nursing, IT, construction, and more. We match you to the
           right programme and employer.
         </p>
-        <a href="#" class="pathway-link">
-          Learn more
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="pathway-actions">
+          <a href="#resources" class="pathway-cta">See the free guide</a>
+          <a href="#" class="pathway-cta pathway-secondary" data-whatsapp-message="I want to learn about Ausbildung in Germany">Ask on WhatsApp</a>
+        </div>
       </div>
 
       <div class="pathway-card">
@@ -977,12 +1153,73 @@ footer {
           Africans to move for work. We guide you through recognition of
           qualifications and your work visa.
         </p>
-        <a href="#" class="pathway-link">
-          Learn more
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="pathway-actions">
+          <a href="#resources" class="pathway-cta">See the free guide</a>
+          <a href="#" class="pathway-cta pathway-secondary" data-whatsapp-message="I want to learn about Skilled Work in Germany">Ask on WhatsApp</a>
+        </div>
       </div>
 
+    </div>
+
+    <div class="section-cta reveal reveal-delay-2">
+      <a href="#" class="btn btn-red" target="_blank" rel="noopener" data-whatsapp-message="I want a Germany consultation">
+        Get Your Germany Roadmap
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     IN-DEMAND CAREERS
+════════════════════════════════ -->
+<section class="section bg-gray" id="careers">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">In-demand careers</p>
+      <h2 class="section-title">Skills Germany is actively <em>looking for</em></h2>
+      <p class="section-sub">
+        If your background matches one of these sectors, your Germany plan may be more realistic than you think.
+      </p>
+    </div>
+
+    <div class="card-grid two-up reveal reveal-delay-1">
+      <div class="info-card">
+        <div class="career-tag">Nursing</div>
+        <h3>Healthcare staffing is a priority</h3>
+        <p>Germany needs qualified nurses and caregivers across hospitals, elder care, and clinics.</p>
+      </div>
+      <div class="info-card">
+        <div class="career-tag">IT</div>
+        <h3>Digital roles stay in demand</h3>
+        <p>Software, support, data, and systems roles remain important as German companies scale digitally.</p>
+      </div>
+      <div class="info-card">
+        <div class="career-tag">Construction</div>
+        <h3>Infrastructure keeps growing</h3>
+        <p>Skilled trades, site support, and construction workers help fill shortages in large projects.</p>
+      </div>
+      <div class="info-card">
+        <div class="career-tag">Logistics</div>
+        <h3>Movement and supply chains need people</h3>
+        <p>Warehousing, shipping, and transport operations need reliable workers with strong routines.</p>
+      </div>
+      <div class="info-card">
+        <div class="career-tag">Caregiving</div>
+        <h3>Senior care opportunities are expanding</h3>
+        <p>Care roles are essential in Germany’s ageing population and can fit practical, service-minded candidates.</p>
+      </div>
+      <div class="info-card">
+        <div class="career-tag">Hospitality</div>
+        <h3>Service sectors still hire</h3>
+        <p>Hotels, restaurants, and facilities teams need dependable staff in many city and tourism hubs.</p>
+      </div>
+    </div>
+
+    <div class="section-cta reveal reveal-delay-2">
+      <a href="#" class="btn btn-outline" target="_blank" rel="noopener" data-whatsapp-message="I want to know which Germany career route fits my profile">
+        See If I Qualify
+      </a>
     </div>
   </div>
 </section>
@@ -1026,6 +1263,164 @@ footer {
           via WhatsApp and consultation sessions.
         </p>
       </div>
+    </div>
+
+    <div class="section-cta reveal reveal-delay-3">
+      <a href="#" class="btn btn-white" target="_blank" rel="noopener" data-whatsapp-message="I want a Germany eligibility and roadmap consultation">
+        Start Your Germany Plan
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     FREE RESOURCES
+════════════════════════════════ -->
+<section class="section" id="resources">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Free resources</p>
+      <h2 class="section-title">Premium guides that help you prepare <em>properly</em></h2>
+      <p class="section-sub">
+        These resources are designed to build trust, help you prepare better, and make your next step clearer.
+      </p>
+    </div>
+
+    <div class="card-grid reveal reveal-delay-1">
+      <div class="info-card">
+        <div class="resource-tag">Free guide</div>
+        <h3>Germany Visa Checklist</h3>
+        <p>See the core documents and preparation steps before you apply for any Germany pathway.</p>
+      </div>
+      <div class="info-card">
+        <div class="resource-tag">Starter pack</div>
+        <h3>Ausbildung Starter Guide</h3>
+        <p>Understand how vocational training works, what employers expect, and how to begin.</p>
+      </div>
+      <div class="info-card">
+        <div class="resource-tag">Student route</div>
+        <h3>Germany Student Visa Guide</h3>
+        <p>Learn what schools, finances, and language preparation usually matter for student applications.</p>
+      </div>
+      <div class="info-card">
+        <div class="resource-tag">Template</div>
+        <h3>Germany CV Template</h3>
+        <p>Use a cleaner format that makes your profile easier to present to employers and training providers.</p>
+      </div>
+      <div class="info-card">
+        <div class="resource-tag">Interview prep</div>
+        <h3>Embassy Interview Preparation</h3>
+        <p>Practice the types of questions and proof points that help you answer with confidence.</p>
+      </div>
+      <div class="info-card">
+        <div class="resource-tag">Lead magnet</div>
+        <h3>Request a tailored resource pack</h3>
+        <p>Tell us your target pathway on WhatsApp and we will point you to the most useful guide.</p>
+      </div>
+    </div>
+
+    <div class="section-cta reveal reveal-delay-2">
+      <a href="#" class="btn btn-red" target="_blank" rel="noopener" data-whatsapp-message="I want the free Germany resources pack">
+        Get Free Guide
+      </a>
+      <a href="#" class="btn btn-outline" target="_blank" rel="noopener" data-whatsapp-message="I want to download the Germany checklist">
+        Download Checklist
+      </a>
+      <a href="#" class="btn btn-outline" target="_blank" rel="noopener" data-whatsapp-message="I want the Germany resources pack on WhatsApp">
+        Request Resources on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     CONSULTATION OFFER
+════════════════════════════════ -->
+<section class="section bg-dark" id="consultation">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Consultation offer</p>
+      <h2 class="section-title light">Germany Eligibility & Roadmap <em>Consultation</em></h2>
+      <p class="section-sub light">
+        A focused session that helps you understand your best route, avoid wrong applications, and prepare with confidence.
+      </p>
+    </div>
+
+    <div class="card-grid two-up reveal reveal-delay-1">
+      <div class="highlight-panel">
+        <div class="consultation-tag">What you get</div>
+        <div class="consultation-copy">
+          <h3>Clear support before you commit</h3>
+          <p>We assess your profile and show you the most realistic Germany pathway for your background.</p>
+        </div>
+        <ul class="consultation-list">
+          <li>Profile assessment</li>
+          <li>Pathway recommendation</li>
+          <li>Document roadmap</li>
+          <li>Visa preparation guidance</li>
+          <li>WhatsApp support during planning</li>
+        </ul>
+      </div>
+
+      <div class="highlight-panel">
+        <div class="consultation-tag">Best for</div>
+        <div class="consultation-copy">
+          <h3>Applicants who want a serious plan</h3>
+          <p>This is ideal if you want a clear answer, honest expectations, and a step-by-step roadmap.</p>
+        </div>
+        <ul class="consultation-list">
+          <li>People exploring Study, Ausbildung, or Skilled Work</li>
+          <li>Applicants unsure which documents matter first</li>
+          <li>Families and professionals who want honest direction</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="consultation-actions reveal reveal-delay-2">
+      <a href="#" class="btn btn-white" target="_blank" rel="noopener" data-whatsapp-message="I want the Germany eligibility and roadmap consultation">
+        Book Consultation
+      </a>
+      <a href="#faq" class="btn btn-ghost-white">Read Common Questions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     REALISTIC EXPECTATIONS
+════════════════════════════════ -->
+<section class="section bg-gray" id="expectations">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Honest expectations</p>
+      <h2 class="section-title">What matters before you <em>apply</em></h2>
+      <p class="section-sub">
+        We keep the process professional and realistic so serious applicants know what to prepare.
+      </p>
+    </div>
+
+    <div class="card-grid two-up reveal reveal-delay-1">
+      <div class="info-card">
+        <h3>Preparation matters</h3>
+        <ul class="expectation-list">
+          <li>German language may be required depending on the pathway</li>
+          <li>Some qualifications need recognition or matching documents</li>
+          <li>Processing times vary by pathway and embassy workload</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Why honest guidance helps</h3>
+        <ul class="expectation-list">
+          <li>It reduces wasted time and false starts</li>
+          <li>It helps you choose the right route sooner</li>
+          <li>It improves the quality of your application preparation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-cta reveal reveal-delay-2">
+      <a href="#" class="btn btn-red" target="_blank" rel="noopener" data-whatsapp-message="I want an honest assessment of my Germany options">
+        Get Honest Guidance
+      </a>
     </div>
   </div>
 </section>
@@ -1075,14 +1470,14 @@ footer {
 <section class="section bg-dark">
   <div class="container">
     <div class="reveal">
-      <p class="section-label">Real results</p>
-      <h2 class="section-title light">People who made the <em>move</em></h2>
+      <p class="section-label">Client feedback</p>
+      <h2 class="section-title light">What clarity looks like for <em>applicants</em></h2>
     </div>
 
     <div class="testimonials-grid">
       <div class="testimonial reveal">
         <div class="stars">★★★★★</div>
-        <p>"Ailes Global gave me a realistic picture of what I needed. Within 6 months I was in Hamburg starting my Ausbildung in nursing."</p>
+        <p>"Ailes Global gave me a realistic picture of what I needed and helped me understand the next steps for my profile."</p>
         <div class="testimonial-author">
           <div class="author-avatar">AM</div>
           <div>
@@ -1106,7 +1501,7 @@ footer {
 
       <div class="testimonial reveal reveal-delay-2">
         <div class="stars">★★★★★</div>
-        <p>"As a nurse from Uganda I did not know if Germany was possible. They showed me exactly which documents to prepare. I got my visa."</p>
+        <p>"As a nurse from Uganda I did not know if Germany was possible. They showed me exactly which documents to prepare and where to start."</p>
         <div class="testimonial-author">
           <div class="author-avatar">BK</div>
           <div>
@@ -1174,7 +1569,7 @@ footer {
           </div>
         </button>
         <div class="faq-answer">
-          It depends on your pathway and how prepared you are. Most clients reach visa approval within 4–9 months once they follow the plan. We give you a realistic timeline during your first consultation.
+          It depends on your pathway and how prepared you are. Timelines can vary widely, but we give you a realistic estimate during your first consultation.
         </div>
       </div>
 
@@ -1198,9 +1593,15 @@ footer {
           </div>
         </button>
         <div class="faq-answer">
-          Yes. Germany has a serious shortage of skilled workers and is actively recruiting from Africa. New migration laws introduced in 2024 make the process more accessible. With the right preparation and honest guidance, it is a realistic path — and we have the results to prove it.
+          Yes. Germany has a serious shortage of skilled workers and is actively recruiting from Africa. New migration laws introduced in 2024 make the process more accessible. With the right preparation and honest guidance, it can be a realistic path.
         </div>
       </div>
+    </div>
+
+    <div class="section-cta reveal reveal-delay-1">
+      <a href="#" class="btn btn-red" target="_blank" rel="noopener" data-whatsapp-message="I have questions about moving to Germany and want to check my eligibility">
+        Check Your Eligibility
+      </a>
     </div>
   </div>
 </section>
@@ -1220,8 +1621,8 @@ footer {
     for your profile — before you spend a cent.
   </p>
   <div class="cta-actions">
-    <a href="https://wa.me/256700000000?text=Hello%2C%20I%20want%20a%20free%20eligibility%20check%20for%20Germany"
-       class="btn btn-white" target="_blank" rel="noopener">
+    <a href="#"
+       class="btn btn-white" target="_blank" rel="noopener" data-whatsapp-message="I want a free eligibility check for Germany">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
       Free Eligibility Check on WhatsApp
     </a>
@@ -1240,26 +1641,140 @@ footer {
       <a href="#" class="footer-logo">Ailes<span>Global</span></a>
       <ul class="footer-links">
         <li><a href="#pathways">Pathways</a></li>
+        <li><a href="#careers">Careers</a></li>
         <li><a href="#process">How it works</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#consultation">Consultation</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="mailto:info@ailesglobal.com">Email</a></li>
-        <li><a href="https://wa.me/256700000000" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="#" target="_blank" rel="noopener" data-whatsapp-message="I want to start my Germany plan">WhatsApp</a></li>
       </ul>
     </div>
     <p class="footer-bottom">© 2025 Ailes Global · Germany pathways for Africans · Kampala, Uganda</p>
   </div>
 </footer>
 
+<a class="mobile-whatsapp" href="#" target="_blank" rel="noopener" data-whatsapp-message="I want to check my Germany eligibility">
+  WhatsApp
+</a>
+
+<!-- Lead capture modal (inserted by JS if needed) -->
+<div id="lead-modal-root" aria-hidden="true"></div>
+
+</main>
+
 <!-- ════════════════════════════════
      JS
 ════════════════════════════════ -->
 <script>
+const WHATSAPP_NUMBER = '256704833021';
+
+function buildWhatsAppLink(message) {
+  return `https://wa.me/${encodeURIComponent(WHATSAPP_NUMBER)}?text=${encodeURIComponent(message)}`;
+}
+
+// Lead modal + click interception
+const leadModal = (function(){
+  const root = document.getElementById('lead-modal-root');
+  root.innerHTML = `
+    <div id="lead-modal" class="lead-modal" style="display:none">
+      <div class="lead-backdrop"></div>
+      <div class="lead-panel" role="dialog" aria-modal="true" aria-labelledby="lead-title">
+        <button class="lead-close" aria-label="Close" style="position:absolute;right:12px;top:10px;border:none;background:none;font-size:20px;cursor:pointer">✕</button>
+        <h3 id="lead-title">Quick — tell us who you are</h3>
+        <p>We save your request and open WhatsApp. Provide name and phone or email (optional).</p>
+        <form id="lead-form">
+          <label><input name="name" type="text" placeholder="Your name" /></label>
+          <label><input name="contact" type="text" placeholder="Phone or email" /></label>
+          <input type="hidden" name="message" />
+          <input type="hidden" name="source" />
+          <div class="lead-actions">
+            <button type="submit" class="btn btn-red">Send & Open WhatsApp</button>
+            <button type="button" id="lead-skip" class="btn btn-outline">Skip & Open WhatsApp</button>
+          </div>
+        </form>
+      </div>
+    </div>`;
+
+  const modal = document.getElementById('lead-modal');
+  const form = document.getElementById('lead-form');
+  const closeBtn = modal.querySelector('.lead-close');
+  const backdrop = modal.querySelector('.lead-backdrop');
+  const skipBtn = document.getElementById('lead-skip');
+  let waUrl = '';
+
+  function open(message, href, source){
+    waUrl = href;
+    form.message.value = message;
+    form.source.value = source || '';
+    form.name.value = '';
+    form.contact.value = '';
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+  }
+  function close(){ modal.style.display = 'none'; modal.setAttribute('aria-hidden', 'true'); }
+
+  closeBtn.addEventListener('click', close);
+  backdrop.addEventListener('click', close);
+
+  skipBtn.addEventListener('click', () => { close(); window.open(waUrl, '_blank'); });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = {
+      name: form.name.value.trim(),
+      contact: form.contact.value.trim(),
+      message: form.message.value,
+      source: form.source.value,
+      page: location.pathname,
+    };
+    try {
+      await fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+    } catch (err) {
+      console.error('lead submit error', err);
+    } finally {
+      close();
+      window.open(waUrl, '_blank');
+    }
+  });
+
+  return { open };
+})();
+
+document.querySelectorAll('[data-whatsapp-message]').forEach(link => {
+  const message = link.getAttribute('data-whatsapp-message') || 'I want to learn more about Germany pathways';
+  const wa = buildWhatsAppLink(message);
+  link.dataset.waHref = wa;
+  link.href = wa;
+  link.addEventListener('click', (e) => {
+    // ignore non-primary clicks
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    const source = link.getAttribute('data-whatsapp-source') || link.getAttribute('data-source') || 'website-cta';
+    leadModal.open(message, wa, source);
+  });
+});
+
 /* ── Hamburger ── */
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobile-nav');
 hamburger.addEventListener('click', () => {
   const open = mobileNav.classList.toggle('open');
   hamburger.setAttribute('aria-expanded', open);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+});
+
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
 });
 
 /* ── FAQ accordion ── */
