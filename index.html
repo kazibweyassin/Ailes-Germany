@@ -139,30 +139,8 @@ nav {
 }
 
 /* ════════════════════════════════
-   HERO
+  HERO
 ════════════════════════════════ */
-<!-- placeholder: Cost breakdown loaded from fragment to keep index.html lean -->
-<div id="cost-placeholder" data-src="cost-breakdown.html" aria-busy="true"></div>
-
-<script>
-// Loader for cost-breakdown fragment
-document.addEventListener('DOMContentLoaded', function(){
-  var ph = document.getElementById('cost-placeholder');
-  if(!ph) return;
-  fetch(ph.getAttribute('data-src'))
-    .then(function(r){ return r.text(); })
-    .then(function(html){
-      var temp = document.createElement('div');
-      temp.innerHTML = html;
-      ph.parentNode.replaceChild(temp.firstElementChild, ph);
-    })
-    .catch(function(err){
-      console.error('Failed to load cost fragment:', err);
-      ph.setAttribute('aria-busy','false');
-    });
-});
-</script>
-}
 .btn {
   display: inline-flex;
   align-items: center;
@@ -450,9 +428,7 @@ document.addEventListener('DOMContentLoaded', function(){
   letter-spacing: 0.02em;
   box-shadow: 0 14px 40px rgba(204,0,0,0.28);
 }
-
-/* Lead modal (lightweight) */
-.lead-modal { }
+.lead-modal { display:none; }
 .lead-backdrop { position: fixed; inset:0; background: rgba(0,0,0,0.45); }
 .lead-panel { position: fixed; left:50%; top:50%; transform:translate(-50%,-50%); max-width:520px; width:92%; background:var(--white); padding:1.25rem; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.16); }
 .lead-panel h3 { font-family:var(--serif); margin-bottom:0.25rem; }
@@ -721,6 +697,12 @@ document.addEventListener('DOMContentLoaded', function(){
 .faq-item {
   border-bottom: 1px solid var(--border);
 }
+.bg-dark .faq-item {
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+.bg-dark .faq-q { color: var(--white); }
+.bg-dark .faq-answer { color: rgba(248,246,241,0.75); }
+.bg-dark .faq-icon { border-color: rgba(255,255,255,0.2); }
 .faq-btn {
   width: 100%;
   display: flex;
@@ -764,7 +746,7 @@ document.addEventListener('DOMContentLoaded', function(){
   transition: max-height 0.4s ease, padding-bottom 0.3s;
 }
 .faq-item.open .faq-answer {
-  max-height: 300px;
+  max-height: 600px;
   padding-bottom: 1.4rem;
 }
 
@@ -1135,28 +1117,30 @@ footer {
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     WORK IN GERMANY
-════════════════════════════════ -->
-<!-- placeholder: Work section loaded from fragment to keep index.html lean -->
-<div id="work-placeholder" data-src="work-section.html" aria-busy="true"></div>
-
+<!-- Work in Germany loaded from fragment -->
+<div id="work-placeholder" data-src="work-section.html"></div>
 <script>
-document.addEventListener('DOMContentLoaded', function(){
-  var ph = document.getElementById('work-placeholder');
-  if(!ph) return;
-  fetch(ph.getAttribute('data-src'))
-    .then(function(r){ return r.text(); })
-    .then(function(html){
-      var temp = document.createElement('div');
-      temp.innerHTML = html;
-      ph.parentNode.replaceChild(temp.firstElementChild, ph);
-    })
-    .catch(function(err){
-      console.error('Failed to load work section fragment:', err);
-      ph.setAttribute('aria-busy','false');
-    });
-});
+(function(){
+  function loadFragment(id, src){
+    var ph = document.getElementById(id);
+    if(!ph) return;
+    fetch(src)
+      .then(function(r){ return r.text(); })
+      .then(function(html){
+        var temp = document.createElement('div');
+        temp.innerHTML = html;
+        ph.parentNode.replaceChild(temp.firstElementChild, ph);
+      })
+      .catch(function(err){
+        console.error('Failed to load '+src+':', err);
+      });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ loadFragment('work-placeholder', 'work-section.html'); });
+  } else {
+    loadFragment('work-placeholder', 'work-section.html');
+  }
+})();
 </script>
 
 <!-- ════════════════════════════════
@@ -1414,67 +1398,31 @@ document.addEventListener('DOMContentLoaded', function(){
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     COST BREAKDOWN
-════════════════════════════════ -->
-<section class="section bg-gray">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label">Budget planning</p>
-      <h2 class="section-title">What does it cost to <em>move to Germany?</em></h2>
-      <p class="section-sub">
-        Transparent breakdown of typical visa, moving, and living costs so you can plan ahead.
-      </p>
-    </div>
-
-    <div class="card-grid two-up reveal reveal-delay-1">
-      <div class="info-card">
-        <h3>Visa & application costs</h3>
-        <ul class="expectation-list">
-          <li>Visa application fee: €80–€100</li>
-          <li>Qualification recognition (if needed): €100–€300</li>
-          <li>Medical examination: €50–€150</li>
-          <li>Document translation: €50–€200</li>
-          <li><strong>Subtotal: €280–€750</strong></li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>Moving & setup (first month)</h3>
-        <ul class="expectation-list">
-          <li>Flight from Uganda: €400–€700</li>
-          <li>Temporary accommodation (1–2 weeks): €300–€600</li>
-          <li>Registration/admin costs: €50–€100</li>
-          <li>Phone SIM & essentials: €30–€50</li>
-          <li><strong>Subtotal: €780–€1,450</strong></li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>Monthly living costs (estimate)</h3>
-        <ul class="expectation-list">
-          <li>Rent (shared apartment): €400–€600</li>
-          <li>Food & groceries: €200–€300</li>
-          <li>Transport pass: €50–€100</li>
-          <li>Utilities & internet: €100–€150</li>
-          <li><strong>Monthly: €750–€1,150</strong></li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>Ailes Global consultation</h3>
-        <ul class="expectation-list">
-          <li>Free eligibility check: no cost</li>
-          <li>Roadmap consultation: €50–€150 (one-time)</li>
-          <li>Full application support (optional): €300–€600</li>
-          <li>Ongoing WhatsApp guidance: included</li>
-          <li><strong>Our typical cost: €0–€750</strong></li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="section-sub" style="text-align:center;margin-top:2rem;max-width:none">
-      <strong>Total first-year estimate:</strong> €2,000–€4,500 (visa, moving, setup, and first 3 months living).
-    </p>
-  </div>
-</section>
+<!-- Cost Breakdown loaded from fragment -->
+<div id="cost-placeholder" data-src="cost-breakdown.html"></div>
+<script>
+(function(){
+  function loadFragment(id, src){
+    var ph = document.getElementById(id);
+    if(!ph) return;
+    fetch(src)
+      .then(function(r){ return r.text(); })
+      .then(function(html){
+        var temp = document.createElement('div');
+        temp.innerHTML = html;
+        ph.parentNode.replaceChild(temp.firstElementChild, ph);
+      })
+      .catch(function(err){
+        console.error('Failed to load '+src+':', err);
+      });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ loadFragment('cost-placeholder', 'cost-breakdown.html'); });
+  } else {
+    loadFragment('cost-placeholder', 'cost-breakdown.html');
+  }
+})();
+</script>
 
 <!-- ════════════════════════════════
      MORE TESTIMONIALS
@@ -1564,7 +1512,10 @@ document.addEventListener('DOMContentLoaded', function(){
   </div>
 </section>
 
-
+<!-- ════════════════════════════════
+     WHO IT'S FOR
+════════════════════════════════ -->
+<section class="section" id="who">
   <div class="container">
     <div class="reveal">
       <p class="section-label">Who we help</p>
@@ -1751,11 +1702,13 @@ document.addEventListener('DOMContentLoaded', function(){
       <h2 class="section-title light">Privacy & legal</h2>
     </div>
 
-    <div class="faq-container reveal reveal-delay-1">
+    <div class="faq-list reveal reveal-delay-1">
       <div class="faq-item">
-        <button class="faq-question">
-          <span>How do you use my data?</span>
-          <span class="faq-icon">+</span>
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q">How do you use my data?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
         </button>
         <div class="faq-answer">
           <p>When you submit a lead form or contact us via WhatsApp, we collect your name and contact information to assess your Germany visa eligibility and send guidance. Your data is stored securely in Airtable and used only to:</p>
@@ -1770,9 +1723,11 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
-          <span>Can I delete my information?</span>
-          <span class="faq-icon">+</span>
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q">Can I delete my information?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
         </button>
         <div class="faq-answer">
           <p>Yes. Contact us at <strong>info@ailesglobal.com</strong> with your name and email, and we will delete your record from our database within 5 business days. You may continue to receive messages until deletion is processed.</p>
@@ -1780,9 +1735,11 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
-          <span>Do you guarantee visa approval?</span>
-          <span class="faq-icon">+</span>
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q">Do you guarantee visa approval?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
         </button>
         <div class="faq-answer">
           <p>No. Visa approval is decided solely by German immigration authorities. Ailes Global provides guidance, document checklists, and roadmaps based on your profile—but the final decision rests with official government agencies. We cannot guarantee approval, and we are not affiliated with German government bodies.</p>
@@ -1790,9 +1747,11 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
-          <span>What if I change my mind?</span>
-          <span class="faq-icon">+</span>
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q">What if I change my mind?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
         </button>
         <div class="faq-answer">
           <p>You can opt out anytime. Reply "STOP" to any WhatsApp message, or email <strong>info@ailesglobal.com</strong> to unsubscribe from communications. We'll remove you from our list and respect your preference.</p>
@@ -1800,9 +1759,11 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
-          <span>Is my data secure?</span>
-          <span class="faq-icon">+</span>
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q">Is my data secure?</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
         </button>
         <div class="faq-answer">
           <p>Yes. We use industry-standard encryption (HTTPS) for all data transmission and store lead records in Airtable with enterprise-grade security. Sensitive API keys and credentials are never exposed in public code. However, no system is 100% secure; we recommend not sending sensitive government ID numbers via WhatsApp. Provide those only when officially requested by German immigration.</p>
@@ -1810,9 +1771,11 @@ document.addEventListener('DOMContentLoaded', function(){
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
-          <span>Terms of service</span>
-          <span class="faq-icon">+</span>
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q">Terms of service</span>
+          <div class="faq-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
         </button>
         <div class="faq-answer">
           <p><strong>Use License:</strong> This website and all content (text, images, resources, guides) are provided "as is" for informational purposes only. By accessing this site, you agree to use it lawfully and not for any illegal activity, including visa fraud or misrepresentation.</p>
