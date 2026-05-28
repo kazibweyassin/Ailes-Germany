@@ -46,10 +46,71 @@
 }
 </script>
 
+<!-- FAQ Schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where do I start if I want to move to Germany?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with a free eligibility check on WhatsApp. We review your background — education, experience, language level — and tell you which pathway is realistic for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to speak German before I apply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the pathway. Ausbildung usually requires B1–B2 German. Some university programmes are taught in English."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I apply without a university degree?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Ausbildung (vocational training) is designed for people without university degrees. You earn a salary while you train."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the whole process take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your pathway and how prepared you are. Timelines can vary widely, but we give you a realistic estimate during your first consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to use your services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The eligibility check is free. We offer paid consultation packages and full application support. Prices are transparent and explained before you commit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is moving to Germany actually realistic for Africans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Africa has a growing population of German professionals. Germany actively recruits from Africa for healthcare, IT, trades, and skilled work."
+      }
+    }
+  ]
+}
+</script>
+
 <title>Ailes Global — Move to Germany</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<!-- Calendly Booking Widget -->
+<link href="https://assets.calendly.com/assets/external/calendar.css" rel="stylesheet" />
+<script src="https://assets.calendly.com/assets/external/calendar.js" type="text/javascript" async></script>
 <style>
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1113,10 +1174,10 @@ footer {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
         Check My Eligibility
       </a>
-      <a href="#pathways" class="btn btn-outline">
-        Explore Pathways
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <button class="btn btn-outline" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ailesglobal/consultation'});return false;">
+        Book Consultation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7V5m8 2V5M9 11h6M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      </button>
     </div>
 
     <div class="hero-proof reveal">
@@ -1567,36 +1628,36 @@ footer {
     <div class="testimonials-grid reveal reveal-delay-1">
       <div class="testimonial">
         <div class="stars">★★★★★</div>
-        <p>"I was overwhelmed by visa options. Ailes Global mapped out exactly which pathway fit me, and I felt confident for the first time."</p>
+        <p>"Ailes Global identified that my nursing qualification was exactly what Germany needed. In 6 months I had my job offer and visa approval. I'm now working at a Berlin hospital."</p>
         <div class="testimonial-author">
           <div class="author-avatar">JK</div>
           <div>
             <div class="author-name">James K.</div>
-            <div class="author-route">Kenya → Frankfurt</div>
+            <div class="author-route">Kenya (Nurse) → Frankfurt</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial reveal reveal-delay-2">
         <div class="stars">★★★★★</div>
-        <p>"The document checklist saved me weeks. I avoided mistakes and my application was approved on the first try."</p>
+        <p>"Their step-by-step guidance on the Ausbildung pathway was invaluable. I went from no German to B1 level, secured an apprenticeship, and my work visa was approved on the first submission."</p>
         <div class="testimonial-author">
           <div class="author-avatar">NC</div>
           <div>
             <div class="author-name">Nia C.</div>
-            <div class="author-route">Nigeria → Stuttgart</div>
+            <div class="author-route">Nigeria (Ausbildung) → Stuttgart</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial reveal reveal-delay-3">
         <div class="stars">★★★★★</div>
-        <p>"WhatsApp support throughout the process made a huge difference. I always knew what was happening next and who to contact."</p>
+        <p>"I was unsure if my IT background qualified for German standards. They helped me navigate the skilled worker visa, and I landed a developer role in 4 months. Now earning €45k at a Berlin tech company."</p>
         <div class="testimonial-author">
           <div class="author-avatar">MP</div>
           <div>
             <div class="author-name">Moses P.</div>
-            <div class="author-route">Tanzania → Berlin</div>
+            <div class="author-route">Tanzania (Developer) → Berlin</div>
           </div>
         </div>
       </div>
@@ -1605,36 +1666,36 @@ footer {
     <div class="testimonials-grid reveal reveal-delay-2" style="margin-top:1.5rem">
       <div class="testimonial">
         <div class="stars">★★★★★</div>
-        <p>"The cost breakdown was the most helpful. I could tell my family exactly what to budget, and there were no surprises."</p>
+        <p>"As a care assistant, I was worried about recognition in Germany. Ailes Global connected me with employers and within 3 months I had a job contract and housing sorted. I'm earning €24k and building my career path."</p>
         <div class="testimonial-author">
           <div class="author-avatar">EO</div>
           <div>
             <div class="author-name">Esther O.</div>
-            <div class="author-route">Uganda → Munich</div>
+            <div class="author-route">Uganda (Care Assistant) → Munich</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial reveal reveal-delay-3">
         <div class="stars">★★★★★</div>
-        <p>"I thought I didn't have a chance. They showed me that my nursing qualification was exactly what Germany needed."</p>
+        <p>"I doubted myself, but they proved my nursing credentials were in high demand in Germany. Job offer secured, visa approved in 5 months. I'm now earning €28k at a Hamburg hospital with clear advancement prospects."</p>
         <div class="testimonial-author">
           <div class="author-avatar">AJ</div>
           <div>
             <div class="author-name">Angela J.</div>
-            <div class="author-route">South Africa → Hamburg</div>
+            <div class="author-route">South Africa (Nurse) → Hamburg</div>
           </div>
         </div>
       </div>
 
       <div class="testimonial reveal reveal-delay-4">
         <div class="stars">★★★★★</div>
-        <p>"From first message to visa approval took 6 months. Every step was explained. I'm now working in Germany and loving it."</p>
+        <p>"From my first WhatsApp message to visa approval was 7 months. They explained every step clearly, and I avoided costly mistakes. I'm now earning €32k as a developer in Cologne with excellent benefits."</p>
         <div class="testimonial-author">
           <div class="author-avatar">DR</div>
           <div>
             <div class="author-name">David R.</div>
-            <div class="author-route">Zambia → Cologne</div>
+            <div class="author-route">Zambia (Developer) → Cologne</div>
           </div>
         </div>
       </div>

@@ -1,10 +1,12 @@
 User-agent: *
 Allow: /
 Allow: /images/
+Allow: /api/lead
 Disallow: /api/
 Disallow: /.env*
 Disallow: /node_modules/
 Disallow: /.git/
+Disallow: /.vercel/
 
 # Crawl delay (milliseconds between requests)
 Crawl-delay: 1
@@ -20,3 +22,6 @@ Crawl-delay: 0
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
+
+User-agent: *
+Allow: /
