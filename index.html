@@ -3,12 +3,49 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Ailes Global helps Africans understand realistic pathways to Germany through Study, Ausbildung, and Skilled Work guidance."/>
+<meta name="description" content="Ailes Global helps Africans understand realistic pathways to Germany through Study, Ausbildung, and Skilled Work. Honest guidance, no wasted money."/>
+<meta name="keywords" content="Germany visa, work visa Germany, study Germany, Ausbildung, African professionals, immigration, Germany jobs"/>
+<meta name="author" content="Ailes Global"/>
 <meta name="theme-color" content="#0a0a0a"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="canonical" href="https://ailesglobal.com/"/>
+<link rel="sitemap" href="https://ailesglobal.com/sitemap.xml"/>
+
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Ailes Global — Germany Pathways for Africans"/>
-<meta property="og:description" content="Structured Germany guidance, practical resources, and honest eligibility checks for Africans exploring study, Ausbildung, and work routes."/>
-<meta name="twitter:card" content="summary"/>
+<meta property="og:url" content="https://ailesglobal.com/"/>
+<meta property="og:title" content="Ailes Global — Move to Germany with Clarity"/>
+<meta property="og:description" content="Structured Germany pathways for African professionals. Honest eligibility checks, realistic guidance on Study, Ausbildung, and Skilled Work routes."/>
+<meta property="og:image" content="https://ailesglobal.com/images/hero.jpg"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content="https://ailesglobal.com/"/>
+<meta name="twitter:title" content="Ailes Global — Move to Germany with Clarity"/>
+<meta name="twitter:description" content="Structured Germany pathways for African professionals. Study, Ausbildung, Skilled Work."/>
+<meta name="twitter:image" content="https://ailesglobal.com/images/hero.jpg"/>
+
+<!-- Schema.org / JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ailes Global",
+  "url": "https://ailesglobal.com",
+  "logo": "https://ailesglobal.com/images/hero.jpg",
+  "description": "Germany visa and immigration guidance for African professionals",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "info@ailesglobal.com"
+  },
+  "sameAs": [
+    "https://www.whatsapp.com"
+  ]
+}
+</script>
+
 <title>Ailes Global — Move to Germany</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -1090,8 +1127,9 @@ footer {
     </div>
   </div>
 
-  <!-- Right: stat cards -->
+  <!-- Right: stat cards & hero image -->
   <div class="hero-right reveal reveal-delay-2">
+    <img src="images/hero.jpg" alt="People working and studying in Germany" style="width:100%;border-radius:4px;margin-bottom:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
     <div class="stat-card c-red">
       <div class="stat-num">Structured</div>
       <div class="stat-label">Clear Germany pathways for Africans</div>
@@ -1196,7 +1234,7 @@ footer {
 
     </div>
 
-    <div class="section-cta reveal reveal-delay-2">
+    <div class="section-cta reveal reveal-delay-2" style="margin-bottom: 1rem;">
       <a href="#" class="btn btn-red" target="_blank" rel="noopener" data-whatsapp-message="I want a Germany consultation">
         Get Your Germany Roadmap
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1204,9 +1242,8 @@ footer {
     </div>
   </div>
 </section>
-
 <!-- Work in Germany loaded from fragment -->
-<div id="work-placeholder" data-src="work-section.html"></div>
+<div id="work" data-src="work-section.html"></div>
 
 <!-- ════════════════════════════════
      IN-DEMAND CAREERS
@@ -1469,6 +1506,18 @@ footer {
 <!-- Unified fragment loader -->
 <script>
 (function(){
+  function observeNewReveals(){
+    // Re-observe any new .reveal elements added by fragments
+    if(typeof window.observer !== 'undefined'){
+      document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+        if(!el.dataset.observed){
+          window.observer.observe(el);
+          el.dataset.observed = 'true';
+        }
+      });
+    }
+  }
+  
   function loadAllFragments(){
     var placeholders = document.querySelectorAll('[data-src]');
     placeholders.forEach(function(ph){
@@ -1487,6 +1536,8 @@ footer {
           }
           ph.insertAdjacentHTML('beforebegin', html);
           ph.remove();
+          // Re-observe new elements after fragment load
+          setTimeout(observeNewReveals, 0);
         })
         .catch(function(err){
           console.error('Failed to load '+src+':', err);
@@ -2381,16 +2432,16 @@ document.querySelectorAll('.faq-btn').forEach(btn => {
 });
 
 /* ── Scroll reveal ── */
-const observer = new IntersectionObserver((entries) => {
+window.observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
-      observer.unobserve(e.target);
+      window.observer.unobserve(e.target);
     }
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => window.observer.observe(el));
 
 /* ── Trigger hero reveals immediately ── */
 setTimeout(() => {

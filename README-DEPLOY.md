@@ -26,7 +26,7 @@ Environment variables
 Example `.env` values (use `.env.example` provided):
 
 ```
-WHATSAPP_NUMBER=256704833021
+WHATSAPP_NUMBER=+256704833021
 NOTIFY_EMAIL=info@ailesglobal.com
 AIRTABLE_API_KEY=your_airtable_api_key
 AIRTABLE_BASE_ID=your_airtable_base_id
