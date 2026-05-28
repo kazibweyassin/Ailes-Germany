@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Ailes Global Language Training. Master German language with certified instructors. Courses for beginners to advanced, online and in-person."/>
+<meta name="keywords" content="German language courses, language training, B1 B2 C1, German for Africa, online German, language classes"/>
+<meta name="author" content="Ailes Global"/>
+<meta name="theme-color" content="#0a0a0a"/>
+<link rel="canonical" href="https://ailesglobal.com/language-training.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ailesglobal.com/language-training.html"/>
+<meta property="og:title" content="German Language Training — Ailes Global"/>
+<meta property="og:description" content="Learn German from certified instructors. Courses for A1-C1 levels."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="German Language Training — Ailes Global"/>
+<meta name="twitter:description" content="Master German with Ailes Global Language Academy."/>
+<title>Language Training — Ailes Global</title>
+<style>
+:root {
+  --black: #0a0a0a;
+  --white: #f8f6f1;
+  --red: #CC0000;
+  --gold: #F2C300;
+  --gray: #4a4a4a;
+  --light-gray: #f0ede7;
+  --border: #e5e1d9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+}
+
+a { color: var(--red); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.2rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.8rem; }
+
+/* Nav */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo { font-weight: 700; font-size: 1.3rem; }
+nav ul { display: flex; gap: 2rem; list-style: none; }
+nav ul li a { font-size: 0.9rem; }
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-red { background: var(--red); color: white; }
+.btn-red:hover { background: #aa0000; }
+
+.btn-white { background: var(--white); color: var(--black); border: 1px solid var(--border); }
+.btn-white:hover { background: var(--light-gray); }
+
+/* Hero */
+.hero {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.1rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+/* Section */
+.section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Course Cards */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.course-card {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: 8px;
+  border-top: 4px solid var(--red);
+  text-align: center;
+}
+
+.course-level {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 0.5rem;
+}
+
+.course-card h3 { margin-bottom: 1rem; }
+.course-card p { color: var(--gray); margin-bottom: 1.5rem; }
+
+.course-features {
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+.course-features li {
+  list-style: none;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.course-features li:before {
+  content: "✓ ";
+  color: var(--red);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.course-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--red);
+  margin: 1rem 0;
+}
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: var(--red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.feature h4 { margin-bottom: 0.5rem; }
+.feature p { color: var(--gray); }
+
+/* Testimonials */
+.testimonial {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.testimonial-author { font-weight: 700; margin-top: 1rem; color: var(--red); }
+.testimonial-role { font-size: 0.85rem; color: var(--gray); }
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  background: var(--black);
+  color: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin-top: 3rem;
+}
+
+.cta-section h2 { color: var(--white); margin-bottom: 1rem; }
+.cta-section p { margin-bottom: 2rem; color: #ccc; }
+
+/* Footer */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+footer a { color: var(--gold); }
+footer p { margin: 0.5rem 0; font-size: 0.9rem; }
+
+@media (max-width: 720px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  .hero { padding: 3rem 1rem; }
+  .section { padding: 3rem 1rem; }
+  nav { flex-direction: column; gap: 1rem; }
+  nav ul { gap: 1rem; font-size: 0.85rem; }
+  .course-grid, .features-grid { grid-template-columns: 1fr; }
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="logo">Ailes Global</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="why-germany.html">Why Germany</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="mailto:info@ailesglobal.com">Contact</a></li>
+  </ul>
+  <a href="mailto:info@ailesglobal.com" class="btn btn-red">Enroll Now</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Master German, Master Your Future</h1>
+  <p>Professional German language training from certified instructors. Online and in-person courses for all levels, designed for African professionals moving to Germany.</p>
+</section>
+
+<!-- Courses -->
+<section class="section">
+  <h2>Our Language Courses</h2>
+  <div class="course-grid">
+    <div class="course-card">
+      <div class="course-level">A1–A2</div>
+      <h3>Beginner German</h3>
+      <p>Start from zero. Learn basics, everyday conversation, and survival skills for your first weeks in Germany.</p>
+      <ul class="course-features">
+        <li>40 hours instruction</li>
+        <li>Small group classes</li>
+        <li>Native speakers</li>
+        <li>Certificate included</li>
+      </ul>
+      <div class="course-price">€199</div>
+      <a href="https://wa.me/256704833021" class="btn btn-red">Enroll →</a>
+    </div>
+
+    <div class="course-card">
+      <div class="course-level">B1–B2</div>
+      <h3>Intermediate German</h3>
+      <p>Communicate confidently. Professional conversations, workplace skills, and cultural fluency.</p>
+      <ul class="course-features">
+        <li>60 hours instruction</li>
+        <li>Interactive projects</li>
+        <li>Business German focus</li>
+        <li>Exam prep included</li>
+      </ul>
+      <div class="course-price">€299</div>
+      <a href="https://wa.me/256704833021" class="btn btn-red">Enroll →</a>
+    </div>
+
+    <div class="course-card">
+      <div class="course-level">C1–C2</div>
+      <h3>Advanced German</h3>
+      <p>Near-native proficiency. Master complex conversations, technical language, and cultural nuance.</p>
+      <ul class="course-features">
+        <li>80 hours instruction</li>
+        <li>One-on-one coaching</li>
+        <li>Specialized topics</li>
+        <li>C1 exam prep</li>
+      </ul>
+      <div class="course-price">€399</div>
+      <a href="https://wa.me/256704833021" class="btn btn-red">Enroll →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="section" style="background: var(--light-gray);">
+  <h2>Why Ailes Global Language Academy?</h2>
+  <div class="features-grid">
+    <div class="feature">
+      <div class="feature-icon">👨‍🏫</div>
+      <div>
+        <h4>Native Instructors</h4>
+        <p>Certified German speakers with experience teaching African professionals.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🌍</div>
+      <div>
+        <h4>Online & In-Person</h4>
+        <p>Flexible learning. Choose online classes or attend in Duisburg or Kampala.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">💼</div>
+      <div>
+        <h4>Professional Focus</h4>
+        <p>Business German, workplace communication, interview prep.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎯</div>
+      <div>
+        <h4>Exam Ready</h4>
+        <p>All courses include official exam preparation (A1-C1).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+  <h2>Student Success Stories</h2>
+  <div class="testimonial">
+    <p>"I arrived in Berlin with no German. After 8 weeks with Ailes, I passed my B1 exam and landed my first job. The instruction was practical and encouraging."</p>
+    <div class="testimonial-author">Amara Chen</div>
+    <div class="testimonial-role">Nurse, Berlin</div>
+  </div>
+  <div class="testimonial">
+    <p>"The business German course was exactly what I needed. I now lead meetings confidently and my colleagues say my German is impressive."</p>
+    <div class="testimonial-author">Kwame Agyeman</div>
+    <div class="testimonial-role">Software Engineer, Frankfurt</div>
+  </div>
+  <div class="testimonial">
+    <p>"Flexible schedule, excellent teachers, and real-world scenarios. Best investment I made before my move to Germany."</p>
+    <div class="testimonial-author">Zainab Mohammed</div>
+    <div class="testimonial-role">Project Manager, Munich</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Speak German Fluently?</h2>
+  <p>Start your German journey today. Small classes, expert instruction, proven results.</p>
+  <a href="https://wa.me/256704833021" class="btn btn-red">Enroll Now →</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p><strong>Ailes Global Language Academy</strong></p>
+  <p>Master German, Master Your Future</p>
+  <p>Duisburg, Germany · Kampala, Uganda</p>
+  <p>Phone: <a href="tel:+256704833021">+256 704 833 021</a></p>
+  <p>Email: <a href="mailto:info@ailesglobal.com">info@ailesglobal.com</a></p>
+  <p style="margin-top: 2rem; font-size: 0.8rem;">© 2025 Ailes Global. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
