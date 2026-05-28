@@ -57,7 +57,7 @@
       "name": "Where do I start if I want to move to Germany?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Start with a free eligibility check on WhatsApp. We review your background — education, experience, language level — and tell you which pathway is realistic for you."
+        "text": "Start with a free eligibility check. We review your background — education, experience, language level — and tell you which pathway is realistic for you."
       }
     },
     {
@@ -1027,6 +1027,28 @@ footer {
   text-decoration: none;
 }
 .footer-logo span { color: var(--red); }
+.footer-contact {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 260px;
+}
+.footer-contact h3 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.footer-contact p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+}
+.footer-contact a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+}
+.footer-contact a:hover { color: var(--white); }
 .footer-links {
   display: flex;
   gap: 2rem;
@@ -1122,22 +1144,24 @@ footer {
   <div class="container nav-inner">
     <a href="#" class="logo">Ailes<span>Global</span></a>
     <ul class="nav-links">
+      <li><a href="why-germany.html">Why Germany</a></li>
       <li><a href="#pathways">Pathways</a></li>
       <li><a href="#work">Work in Germany</a></li>
       <li><a href="#process">How it works</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="#" class="nav-cta" target="_blank" rel="noopener" data-whatsapp-message="I want to learn about Germany pathways for Africans">WhatsApp Us</a>
+    <a href="mailto:info@ailesglobal.com" class="nav-cta" target="_blank" rel="noopener">Contact Us</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-nav" id="mobile-nav">
+    <a href="why-germany.html">Why Germany</a>
     <a href="#pathways">Pathways</a>
     <a href="#work">Work in Germany</a>
     <a href="#process">How it works</a>
     <a href="#faq">FAQ</a>
-    <a href="#" target="_blank" rel="noopener" style="color:var(--red);font-weight:700" data-whatsapp-message="I want to learn about Germany pathways for Africans">WhatsApp Us →</a>
+    <a href="mailto:info@ailesglobal.com" target="_blank" rel="noopener" style="color:var(--red);font-weight:700">Contact Us →</a>
   </div>
 </nav>
 
@@ -1171,7 +1195,7 @@ footer {
 
     <div class="hero-actions reveal reveal-delay-3">
       <a href="#" class="btn btn-red" target="_blank" rel="noopener" data-whatsapp-message="I want to check my Germany eligibility">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        <svg viewBox    ="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
         Check My Eligibility
       </a>
       <button class="btn btn-outline" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ailesglobal/consultation'});return false;">
@@ -1202,7 +1226,7 @@ footer {
       </div>
       <div class="stat-card c-black">
         <div class="stat-num">Guided</div>
-        <div class="stat-label">WhatsApp support and roadmap planning</div>
+        <div class="stat-label">Messaging support and roadmap planning</div>
       </div>
     </div>
     <div class="stat-card" style="border-left:3px solid var(--gold);padding:1.5rem">
@@ -1249,7 +1273,7 @@ footer {
         </p>
         <div class="pathway-actions">
           <a href="#resources" class="pathway-cta">See the free guide</a>
-          <a href="#" class="pathway-cta pathway-secondary" data-whatsapp-message="I want to learn about Study in Germany">Ask on WhatsApp</a>
+          <a href="#" class="pathway-cta pathway-secondary" data-whatsapp-message="I want to learn about Study in Germany">Ask us</a>
         </div>
       </div>
 
@@ -1270,7 +1294,7 @@ footer {
         </p>
         <div class="pathway-actions">
           <a href="#resources" class="pathway-cta">See the free guide</a>
-          <a href="#" class="pathway-cta pathway-secondary" data-whatsapp-message="I want to learn about Ausbildung in Germany">Ask on WhatsApp</a>
+          <a href="#" class="pathway-cta pathway-secondary" data-whatsapp-message="I want to learn about Ausbildung in Germany">Ask us</a>
         </div>
       </div>
 
@@ -1289,7 +1313,25 @@ footer {
         </p>
         <div class="pathway-actions">
           <a href="#resources" class="pathway-cta">See the free guide</a>
-          <a href="#" class="pathway-cta pathway-secondary" data-whatsapp-message="I want to learn about Skilled Work in Germany">Ask on WhatsApp</a>
+          <a href="#" class="pathway-cta pathway-secondary" data-whatsapp-message="I want to learn about Skilled Work in Germany">Ask us</a>
+        </div>
+      </div>
+
+      <div class="pathway-card">
+        <div class="pathway-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 7h16M4 12h16M4 17h10"/>
+            <path d="M15 17l3 3 2-2"/>
+          </svg>
+        </div>
+        <h3>Why Germany?</h3>
+        <p>
+          See why Germany is one of the strongest destinations for study,
+          work, and long-term stability before you pick a pathway.
+        </p>
+        <div class="pathway-actions">
+          <a href="why-germany.html" class="pathway-cta">Read the page</a>
+          <a href="why-germany.html" class="pathway-cta pathway-secondary">Explore now</a>
         </div>
       </div>
 
@@ -1396,7 +1438,7 @@ footer {
         <h3>Full Support</h3>
         <p>
           From first application to visa approval, we guide you every step
-          via WhatsApp and consultation sessions.
+          via messaging and consultation sessions.
         </p>
       </div>
     </div>
@@ -1451,7 +1493,7 @@ footer {
       <div class="info-card">
         <div class="resource-tag">Lead magnet</div>
         <h3>Request a tailored resource pack</h3>
-        <p>Tell us your target pathway on WhatsApp and we will point you to the most useful guide.</p>
+        <p>Tell us your target pathway and we will point you to the most useful guide.</p>
       </div>
     </div>
 
@@ -1463,7 +1505,7 @@ footer {
         Download Checklist
       </a>
       <a href="#" class="btn btn-outline" target="_blank" rel="noopener" data-whatsapp-message="I want the Germany resources pack on WhatsApp">
-        Request Resources on WhatsApp
+        Request Resources
       </a>
     </div>
   </div>
@@ -1494,7 +1536,7 @@ footer {
           <li>Pathway recommendation</li>
           <li>Document roadmap</li>
           <li>Visa preparation guidance</li>
-          <li>WhatsApp support during planning</li>
+          <li>Direct support during planning</li>
         </ul>
       </div>
 
@@ -1690,7 +1732,7 @@ footer {
 
       <div class="testimonial reveal reveal-delay-4">
         <div class="stars">★★★★★</div>
-        <p>"From my first WhatsApp message to visa approval was 7 months. They explained every step clearly, and I avoided costly mistakes. I'm now earning €32k as a developer in Cologne with excellent benefits."</p>
+        <p>"From my first message to visa approval was 7 months. They explained every step clearly, and I avoided costly mistakes. I'm now earning €32k as a developer in Cologne with excellent benefits."</p>
         <div class="testimonial-author">
           <div class="author-avatar">DR</div>
           <div>
@@ -1767,7 +1809,7 @@ footer {
 
       <div class="testimonial reveal reveal-delay-1">
         <div class="stars">★★★★★</div>
-        <p>"Other agencies kept me guessing for months. Here I got an honest plan, a document checklist, and support on WhatsApp every step."</p>
+        <p>"Other agencies kept me guessing for months. Here I got an honest plan, a document checklist, and clear support every step."</p>
         <div class="testimonial-author">
           <div class="author-avatar">FO</div>
           <div>
@@ -1811,7 +1853,7 @@ footer {
           </div>
         </button>
         <div class="faq-answer">
-          Start with a free eligibility check on WhatsApp. We review your background — education, experience, language level — and tell you which pathway is realistic for you. No forms. No fees. Just a clear first answer.
+          Start with a free eligibility check. We review your background — education, experience, language level — and tell you which pathway is realistic for you. No forms. No fees. Just a clear first answer.
         </div>
       </div>
 
@@ -1859,7 +1901,7 @@ footer {
           </div>
         </button>
         <div class="faq-answer">
-          The eligibility check is free. We offer paid consultation packages and full application support. Prices are transparent and explained before you commit to anything. Message us on WhatsApp for current pricing.
+          The eligibility check is free. We offer paid consultation packages and full application support. Prices are transparent and explained before you commit to anything. Contact us for current pricing.
         </div>
       </div>
 
@@ -1902,11 +1944,11 @@ footer {
           </div>
         </button>
         <div class="faq-answer">
-          <p>When you submit a lead form or contact us via WhatsApp, we collect your name and contact information to assess your Germany visa eligibility and send guidance. Your data is stored securely in Airtable and used only to:</p>
+          <p>When you submit a lead form or contact us via our channels, we collect your name and contact information to assess your Germany visa eligibility and send guidance. Your data is stored securely in Airtable and used only to:</p>
           <ul style="margin: 1rem 0 0 1.5rem">
             <li>Respond to your inquiry</li>
             <li>Provide personalized visa roadmap</li>
-            <li>Send relevant resources via email or WhatsApp</li>
+            <li>Send relevant resources via email or direct message</li>
             <li>Improve our service based on common questions</li>
           </ul>
           <p style="margin-top: 1rem">We never sell or share your data with third parties without explicit consent.</p>
@@ -1995,10 +2037,9 @@ footer {
     for your profile — before you spend a cent.
   </p>
   <div class="cta-actions">
-    <a href="#"
-       class="btn btn-white" target="_blank" rel="noopener" data-whatsapp-message="I want a free eligibility check for Germany">
+    <a href="#" class="btn btn-white" target="_blank" rel="noopener" data-whatsapp-message="I want a free eligibility check for Germany">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-      Free Eligibility Check on WhatsApp
+      Free Eligibility Check
     </a>
     <a href="mailto:info@ailesglobal.com" class="btn btn-ghost-white">
       Email Us Instead
@@ -2013,6 +2054,14 @@ footer {
   <div class="container">
     <div class="footer-inner">
       <a href="#" class="footer-logo">Ailes<span>Global</span></a>
+      <div class="footer-contact" aria-label="Contact information">
+        <h3>Contacts</h3>
+        <p>
+          Phone: <a href="tel:+256704833021">+256 704 833 021</a><br/>
+          Duisburg, Germany<br/>
+          Kampala, Uganda
+        </p>
+      </div>
       <ul class="footer-links">
         <li><a href="#pathways">Pathways</a></li>
         <li><a href="#work">Work in Germany</a></li>
@@ -2023,15 +2072,15 @@ footer {
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#privacy">Privacy</a></li>
         <li><a href="mailto:info@ailesglobal.com">Email</a></li>
-        <li><a href="#" target="_blank" rel="noopener" data-whatsapp-message="I want to start my Germany plan">WhatsApp</a></li>
+        <li><a href="mailto:info@ailesglobal.com">Contact</a></li>
       </ul>
     </div>
-    <p class="footer-bottom">© 2025 Ailes Global · Germany pathways for Africans · Kampala, Uganda</p>
+    <p class="footer-bottom">© 2025 Ailes Global · Germany pathways for Africans · Duisburg, Germany · Kampala, Uganda</p>
   </div>
 </footer>
 
-<a class="mobile-whatsapp" href="#" target="_blank" rel="noopener" data-whatsapp-message="I want to check my Germany eligibility">
-  WhatsApp
+<a class="mobile-whatsapp" href="mailto:info@ailesglobal.com" target="_blank" rel="noopener">
+  Contact
 </a>
 
 <!-- Lead capture modal (inserted by JS if needed) -->
@@ -2158,7 +2207,7 @@ const leadModal = (function(){
               <button type="button" id="lead-next" class="btn btn-red">Check Eligibility</button>
               <button type="button" id="lead-continue" class="btn btn-red" style="display:none">Continue to Application</button>
               <button type="submit" id="lead-submit" class="btn btn-red" style="display:none">Submit Application</button>
-              <button type="button" id="lead-open-wa" class="btn btn-outline" style="display:none">Open WhatsApp</button>
+              <button type="button" id="lead-open-wa" class="btn btn-outline" style="display:none">Open chat</button>
             </div>
           </div>
         </form>
@@ -2416,7 +2465,7 @@ const leadModal = (function(){
     }
 
     title.textContent = 'Application received';
-    intro.textContent = 'Thanks — your details have been saved. You can now continue to WhatsApp with your eligibility summary.';
+    intro.textContent = 'Thanks — your details have been saved. You can now continue with a direct message containing your eligibility summary.';
     successBox.className = 'lead-result good';
     successBox.innerHTML = `
       <h4>Saved successfully</h4>
@@ -2426,7 +2475,7 @@ const leadModal = (function(){
         <li>We will review your submission and respond shortly.</li>
       </ul>
     `;
-    successNote.textContent = 'If you want quicker communication, use WhatsApp with your summary.';
+    successNote.textContent = 'If you want quicker communication, send a direct message with your summary.';
     waUrl = buildWhatsAppLink(`${baseMessage}\n\n${summary}`);
     setStep(4);
   });
