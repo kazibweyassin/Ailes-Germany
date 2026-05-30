@@ -35,11 +35,32 @@
   "url": "https://ailesglobal.com",
   "logo": "https://ailesglobal.com/images/hero.jpg",
   "description": "Germany visa and immigration guidance for African professionals",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Customer Support",
-    "email": "info@ailesglobal.com"
-  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "Munich Office",
+      "email": "info@ailesglobal.com",
+      "telephone": "+4915219256583"
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "Kampala Office",
+      "email": "info@ailesglobal.com",
+      "telephone": "+256704833021"
+    }
+  ],
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Munich",
+      "addressCountry": "DE"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Kampala",
+      "addressCountry": "UG"
+    }
+  ],
   "sameAs": [
     "https://www.whatsapp.com"
   ]
@@ -2072,9 +2093,8 @@ footer {
       <div class="footer-contact" aria-label="Contact information">
         <h3>Contacts</h3>
         <p>
-          Phone: <a href="tel:+256704833021">+256 704 833 021</a><br/>
-          Duisburg, Germany<br/>
-          Kampala, Uganda
+          Munich Office: <a href="tel:+4915219256583">+49 1521 9256583</a><br/>
+          Kampala Office: <a href="tel:+256704833021">+256 704 833 021</a>
         </p>
       </div>
       <ul class="footer-links">
@@ -2090,11 +2110,11 @@ footer {
         <li><a href="mailto:info@ailesglobal.com">Contact</a></li>
       </ul>
     </div>
-    <p class="footer-bottom">© 2025 Ailes Global · Germany pathways for Africans · Duisburg, Germany · Kampala, Uganda</p>
+    <p class="footer-bottom">© 2025 Ailes Global · Germany pathways for Africans · Munich, Germany · Kampala, Uganda</p>
   </div>
 </footer>
 
-<a class="mobile-whatsapp" href="https://wa.me/256704833021" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+<a class="mobile-whatsapp" href="https://wa.me/4915219256583" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
   <i class="bi bi-whatsapp"></i>
 </a>
 
@@ -2107,7 +2127,7 @@ footer {
      JS
 ════════════════════════════════ -->
 <script>
-const WHATSAPP_NUMBER = '+256704833021';
+const WHATSAPP_NUMBER = '+4915219256583';
 
 function buildWhatsAppLink(message) {
   const normalizedNumber = WHATSAPP_NUMBER.replace(/\D/g, '');
